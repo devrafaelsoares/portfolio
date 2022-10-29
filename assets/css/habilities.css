@@ -1,0 +1,60 @@
+#habilities {
+    background-color: #1e1e1e;
+    display: grid;
+    grid-area: habilities;
+    grid-template-areas:
+        'title title title'
+        'skills skills skills'
+        'text-skill text-skill text-skill';
+    grid-template-rows: 30vh auto 30vh;
+}
+
+#title-habilities {
+    align-self: flex-end;
+    grid-area: title;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    grid-area: skills;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.skill {
+    background-color: #fff;
+    border-radius: 1em;
+    cursor: zoom-in;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    width: 200px;
+}
+
+.skill.disable {
+    opacity: 0.5;
+}
+
+.container-icon-skill {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+.container-icon-skill .icon-skill {
+    width: 130px;
+}
+
+.container-text-skill {
+    grid-area: text-skill;
+}
+
+.text-skill {
+    font-size: 1.5em;
+    padding: 2em 1em;
+    text-align: center;
+    width: 100%;
+}
