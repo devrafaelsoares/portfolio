@@ -41,3 +41,8 @@
     grid-area: image;
     justify-content: center;
 }
+
+.image .me-image {
+    width: 300px;
+    border-radius: 10em;
+}
