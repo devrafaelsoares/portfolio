@@ -23,6 +23,7 @@
     justify-content: space-around;
     gap: 3em;
     list-style: none;
+    font-weight: 600;
 }
 
 .navegation > .navegation-pages a {

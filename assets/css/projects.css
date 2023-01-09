@@ -6,6 +6,7 @@
         'title title title'
         'project project project';
     grid-template-rows: 30vh auto;
+
 }
 
 #title-projects {
@@ -74,8 +75,12 @@
     opacity: 1;
 }
 
+.project.activated .content .text-content,.content .text-content {
+    font-weight: 600;
+
+}
+
 .project.activated .content .text-content {
     color: #fff;
-    font-weight: 600;
     font-size: 2.5em;
 }
