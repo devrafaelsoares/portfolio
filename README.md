@@ -18,10 +18,11 @@ Para meu desenvolvimento utilizo as sequintes tecnologias:
 - **HTML**
 - **CSS**
 - **JavaScript**
-- **Express.js**
 - **MySQL**
 - **NodeJS**
 - **MongoDB**
+- **Python**
+- **React**
 
 ## 📌 Considerações Finais
 
