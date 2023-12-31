@@ -1,0 +1,12 @@
+.main__skills {
+    grid-area: section-skills;
+    min-height: 100vh;
+
+    .content__skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+        padding: 2em;
+        gap: 1em;
+        justify-content: center;
+    }
+}

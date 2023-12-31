@@ -1,0 +1,88 @@
+@use '../variables';
+
+.skill-card {
+    padding: 20px;
+    width: 250px;
+    background-color: variables.$white-color;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 0.5em;
+    cursor: pointer;
+    .skill-card__header {
+        border-start-start-radius: 0.5em;
+        border-start-end-radius: 0.5em;
+    }
+    &:hover,
+    &:focus {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        cursor: zoom-in;
+        .skill-card__header {
+            height: 40px;
+
+            .skill-card__icon {
+                transform: translateX(-50%) translateY(-50%) scale(3);
+            }
+        }
+        .skill-card__body {
+            height: 170px;
+
+            .skill-card__knowledge {
+                li {
+                    transform: translateX(0);
+                    transition-timing-function: cubic-bezier(0, 1.5, 1, 1);
+                    transition-duration: 0.5s;
+
+                    @for $i from 1 through 6 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: $i * 0.25s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .skill-card__header {
+        position: relative;
+        height: 170px;
+        margin: -20px -20px 20px -20px;
+        transition: height 0.5s;
+        overflow: hidden;
+
+        .skill-card__icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            display: block;
+            width: 128px;
+            height: 128px;
+            transition: transform 0.5s;
+        }
+    }
+    .skill-card__body {
+        height: 50px;
+        transition: height 0.5s;
+        overflow: hidden;
+
+        .skill-card__title {
+            font-size: 1.4em;
+            font-weight: 400;
+            color: variables.$black-color;
+            text-transform: uppercase;
+        }
+        .skill-card__duration {
+            color: variables.$light-gray-secondary-color;
+            font-style: italic;
+        }
+        .skill-card__knowledge {
+            margin-top: 10px;
+            color: variables.$dark-gray-color;
+
+            li {
+                margin-top: 5px;
+                transition-duration: 0;
+                transition-delay: 0.5s;
+                transform: translateX(-100%);
+            }
+        }
+    }
+}

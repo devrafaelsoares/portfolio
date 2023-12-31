@@ -1,0 +1,33 @@
+@use './variables';
+@import './mixins';
+
+* {
+    margin: 0;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: variables.$primary-font;
+}
+
+body:has(.active-menu-responsive) {
+    overflow-y: hidden;
+    min-height: 100vh;
+
+    @include notebook {
+        overflow-y: auto;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: variables.$white-color;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}

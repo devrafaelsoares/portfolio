@@ -1,0 +1,11 @@
+.main__about-me {
+    grid-area: section-about-me;
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+
+    .about-me__content {
+        width: 40%;
+        justify-items: center;
+    }
+}

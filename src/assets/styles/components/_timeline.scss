@@ -1,0 +1,121 @@
+@use '../variables';
+
+$background: #252827;
+
+$color-primary: #004ffc;
+$color-dim: #6c6d6d;
+$spacing: 50px;
+$radius: 4px;
+
+$date: 120px;
+$dotborder: 4px;
+$dot: 11px;
+$line: 4px;
+
+strong {
+    font-weight: 600;
+}
+
+h1 {
+    letter-spacing: 1.5px;
+    color: variables.$white-color;
+    font-weight: 400;
+    font-size: 2.4em;
+}
+
+.timeline {
+    margin-top: $spacing;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.timeline__content {
+    border-left: $line solid $color-primary;
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background: fade(variables.$white-color, 3%);
+    color: fade(white, 80%);
+    letter-spacing: 0.5px;
+    position: relative;
+    display: grid;
+    gap: 2em;
+    line-height: 1.4em;
+    font-size: 1.03em;
+    width: 80%;
+    padding: $spacing 0 $spacing 2em;
+    list-style: none;
+    text-align: left;
+    font-weight: 100;
+
+    h1 {
+        letter-spacing: 1.5px;
+        font-weight: 100;
+        font-size: 1.4em;
+    }
+
+    h2,
+    h3 {
+        letter-spacing: 1.5px;
+        font-weight: 400;
+        font-size: 1.4em;
+    }
+
+    .event {
+        border-bottom: 1px dashed fade(variables.$white-color, 10%);
+        padding-bottom: ($spacing * 0.5);
+        margin-bottom: $spacing;
+        position: relative;
+        display: grid;
+        gap: 0.5em;
+        &:last-of-type {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border: none;
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            top: 0;
+        }
+
+        &:after {
+            box-shadow: 0 0 0 $dotborder fade($color-primary, 100%);
+            left: -40px;
+            background: lighten($background, 5%);
+            border-radius: 50%;
+            height: $dot;
+            width: $dot;
+            content: '';
+            top: 5px;
+        }
+
+        &.__year-container {
+            display: flex;
+        }
+
+        &__skills-container {
+            display: inline-flex;
+            gap: 0.5em;
+            align-items: center;
+            .skill {
+                width: 1.5em;
+            }
+        }
+
+        &__skills-info-container,
+        &__title-container,
+        &__year-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .skills-info-container__icon,
+        .year-container__icon,
+        .title-container__icon {
+            font-size: 1.2em;
+        }
+    }
+}

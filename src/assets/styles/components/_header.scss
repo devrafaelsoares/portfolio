@@ -1,0 +1,171 @@
+@use '../variables';
+@import '../mixins';
+
+$opacity-no-active: 0.7;
+$opacity-active: 1;
+$transition-duration: 0.3s;
+$transition-transform: transform $transition-duration;
+$transition-filter: filter $transition-duration;
+$nav-font-size: 18px;
+$spacing-1: 1rem;
+$spacing-2: $spacing-1 * 2;
+
+.container__header {
+    height: 10lvh;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    background-color: variables.$primary-dark-color;
+    grid-area: header;
+    padding: 0 $spacing-1;
+    z-index: 1;
+
+    .header__content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .content__logo-container {
+            display: flex;
+            gap: $spacing-1;
+            color: variables.$white-color;
+            align-items: center;
+            justify-content: center;
+            transition: $transition-transform;
+            cursor: pointer;
+
+            .logo-container__icon {
+                width: $spacing-2;
+                fill: variables.$logo-color;
+                animation-name: spin;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+
+        .content__nav {
+            background-color: variables.$primary-dark-color;
+            transition: $transition-filter;
+
+            .nav__links {
+                display: none;
+                opacity: $opacity-no-active;
+                transition: $transition-transform;
+                padding: 0 $spacing-2;
+                gap: 1.5rem;
+
+                cursor: pointer;
+                &:has(a.active) {
+                    opacity: $opacity-active;
+                }
+
+                a.active::after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background-color: variables.$white-color;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .links__link {
+                    opacity: $opacity-no-active;
+                    transition: $transition-transform;
+                    cursor: pointer;
+                    padding: 0.2em 0;
+                    position: relative;
+                    &:has(a.active),
+                    &:hover,
+                    &:focus {
+                        transform: scale(1.1);
+                        opacity: $opacity-active;
+                    }
+                }
+            }
+
+            @include notebook {
+                width: 90%;
+                display: block;
+                background-color: variables.$primary-dark-color;
+                .nav__links {
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    font-size: $nav-font-size;
+                }
+            }
+        }
+
+        .content__nav.active-menu-responsive {
+            position: absolute;
+            top: 10lvh;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 10vh);
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            .nav__links {
+                display: flex;
+                flex-direction: column;
+                font-size: 28px;
+                align-items: start;
+                gap: 1.5em;
+            }
+
+            @include notebook {
+                position: inherit;
+                height: 0vh;
+                .nav__links {
+                    width: 90%;
+                    justify-content: end;
+                    flex-direction: row;
+                    padding: 0;
+                    font-size: $nav-font-size;
+                }
+            }
+        }
+
+        .content__theme-container {
+            .theme-container__button-icon {
+                background: transparent;
+                cursor: pointer;
+                .button-icon__icon {
+                    color: variables.$white-color;
+                    font-size: 1.7em;
+                }
+            }
+        }
+
+        .content__resposive-nav {
+            display: block;
+
+            .menu__button {
+                background-color: transparent;
+                cursor: pointer;
+                .icon {
+                    color: variables.$white-color;
+                    font-size: 2.5em;
+                }
+            }
+
+            @include notebook {
+                display: none;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
