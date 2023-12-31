@@ -1,29 +1,41 @@
-<h1 align="center">
-  👨🏽‍💻<br>Portfólio - Rafael Henrique
-</h1>
+# 🔰 Portfólio
 
-## 📔 Seções
+![GitHub Repo Size][github-repo-size-shield]
+![GitHub Language Count][github-language-count]
+![Github Open Issues][github-open-issues]
+![Github Open Pull Requests][github-open-pull-requests]
+
+## 📜 Seções
 
 Portfólio é composto pelas sequintes seções:
 
-- **Introdução:** Apresentação do portfólio.
-- **Sobre Mim:** Falo um pouco sobre mim.
-- **Habilidades:** Apresento minhas habilidades/hard skills.
-- **Projetos:** Divulgo meus projetos.
+-   **Apresentação:** Apresentação do portfólio.
+-   **Habilidades:** Habilidades técnicas
+-   **Experiências:** Experiência com o ramo tecnológico
+-   **Projetos:** Projetos divulgados
 
-## 🛠 Habilidades
+## Tecnologias utilizadas:
 
-Para meu desenvolvimento utilizo as sequintes tecnologias:
+![React][react-badge]
+![Typescript][typescript-badge]
+![NodeJS][node-js-badge]
+![Sass][sass-badge]
 
-- **HTML**
-- **CSS**
-- **JavaScript**
-- **MySQL**
-- **NodeJS**
-- **MongoDB**
-- **Python**
-- **React**
+## 📍 Considerações Finais
 
-## 📌 Considerações Finais
+-   **Linkdin:** [Rafael Henrique][linkedin]
 
-- **Linkdin:** <a href="https://www.linkedin.com/in/rafael-henrique-soares-de-freitas-2a667a23a/" target="_blank">Rafael Henrique</a>
+<!-- Links -->
+
+[github-repo-size-shield]: https://img.shields.io/github/repo-size/devrafaelsoares/portfolio
+[github-language-count]: https://img.shields.io/github/languages/count/devrafaelsoares/portfolio
+[github-open-issues]: https://img.shields.io/bitbucket/issues/devrafaelsoares/portfolio
+[github-open-pull-requests]: https://img.shields.io/bitbucket/pr-raw/devrafaelsoares/portfolio
+[linkedin]: https://www.linkedin.com/in/rafael-henrique-soares-de-freitas-2a667a23a/
+
+<!-- Badges -->
+
+[typescript-badge]: https://img.shields.io/badge/-Typescript-333333?style=flat&logo=typescript
+[react-badge]: https://img.shields.io/badge/-React-333333?style=flat&logo=react
+[node-js-badge]: https://img.shields.io/badge/-NodeJS-333333?style=flat&logo=node.js
+[sass-badge]: https://img.shields.io/badge/-Sass-333333?style=flat&logo=sass
