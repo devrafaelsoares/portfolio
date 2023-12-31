@@ -1,0 +1,22 @@
+@use '../../variables';
+@import './section-apresentation';
+@import './section-about-me';
+@import './section-skills';
+@import './section-experiences';
+@import './section-projects';
+
+.container__main {
+    display: grid;
+    grid-area: main;
+    grid-template-areas: variables.$main-layout;
+
+    .section {
+        .section-title {
+            font-size: variables.$title-size;
+            text-align: center;
+        }
+    }
+    .section__content {
+        margin-top: variables.$section-separator-margin-top;
+    }
+}

@@ -1,0 +1,38 @@
+// Colors
+
+$white-color: #fff;
+$primary-dark-color: #1b1f24;
+$light-gray-color: #5d6c83;
+$light-gray-secondary-color: #9e9e9e;
+$dark-gray-color: #424242;
+$light-blue-color: #075fe4;
+$regal-blue-color: #034378;
+$dark-cyan-color: #2d4e68;
+$light-green-color: #77d7b9;
+$black-color: #000;
+
+$logo-color: $light-blue-color;
+$border-color: $light-gray-color;
+
+// Fonts
+
+$primary-font: 'Space Grotesk', sans-serif;
+
+// Layouts
+
+$app-layout: 'header' 'main' 'footer';
+$main-layout: 'section-initial' 'section-about-me' 'section-skills' 'section-experiences' 'section-projects';
+
+// Texts
+
+$title-size: 3em;
+
+// Separators
+
+$section-separator-margin-top: 15vh;
+
+// -------- Resposive --------
+
+// ---- Mobile ----
+
+$h1-size: 80px;

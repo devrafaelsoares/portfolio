@@ -1,0 +1,9 @@
+@use '../variables';
+
+.container {
+    min-height: 100dvh;
+    background-color: variables.$primary-dark-color;
+    color: variables.$white-color;
+    display: grid;
+    grid-template-areas: variables.$app-layout;
+}

@@ -1,0 +1,11 @@
+.main__projects {
+    grid-area: section-projects;
+    min-height: 100vh;
+
+    .section__projects {
+        padding: 3em 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
