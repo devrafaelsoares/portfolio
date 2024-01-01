@@ -23,7 +23,7 @@ Portfólio é composto pelas sequintes seções:
 
 ## 📍 Considerações Finais
 
--   **Linkdin:** [Rafael Henrique][linkedin]
+[![Linkedin][linkedin-badge]][linkedin-profile]
 
 <!-- Links -->
 
@@ -39,3 +39,5 @@ Portfólio é composto pelas sequintes seções:
 [react-badge]: https://img.shields.io/badge/-React-333333?style=flat&logo=react
 [node-js-badge]: https://img.shields.io/badge/-NodeJS-333333?style=flat&logo=node.js
 [sass-badge]: https://img.shields.io/badge/-Sass-333333?style=flat&logo=sass
+[linkedin-badge]: https://img.shields.io/badge/-Linkedin-333333?style=flat&logo=linkedin&logoColor=%230077b3
+[linkedin-profile]: https://www.linkedin.com/in/rafael-henrique-soares-de-freitas-2a667a23a/
