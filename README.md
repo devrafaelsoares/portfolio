@@ -25,16 +25,11 @@ Portfólio é composto pelas sequintes seções:
 
 [![Linkedin][linkedin-badge]][linkedin-profile]
 
-<!-- Links -->
-
 [github-repo-size-shield]: https://img.shields.io/github/repo-size/devrafaelsoares/portfolio
 [github-language-count]: https://img.shields.io/github/languages/count/devrafaelsoares/portfolio
 [github-open-issues]: https://img.shields.io/bitbucket/issues/devrafaelsoares/portfolio
 [github-open-pull-requests]: https://img.shields.io/bitbucket/pr-raw/devrafaelsoares/portfolio
 [linkedin]: https://www.linkedin.com/in/rafael-henrique-soares-de-freitas-2a667a23a/
-
-<!-- Badges -->
-
 [typescript-badge]: https://img.shields.io/badge/-Typescript-333333?style=flat&logo=typescript
 [react-badge]: https://img.shields.io/badge/-React-333333?style=flat&logo=react
 [node-js-badge]: https://img.shields.io/badge/-NodeJS-333333?style=flat&logo=node.js
