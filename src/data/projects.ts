@@ -1,5 +1,16 @@
 import { Project } from '../types/project';
-import { NODEJS, PYTHON, REACT, TAILWINDCSS, TYPESCRIPT } from '../data/technologies';
+import {
+    DOCKER,
+    JAVA,
+    NODEJS,
+    POSTGRESQL,
+    PYTHON,
+    REACT,
+    REDIS,
+    SPRINGBOOT,
+    TAILWINDCSS,
+    TYPESCRIPT,
+} from '../data/technologies';
 import { developer } from '../data/developer';
 
 export const projects: Project[] = [
@@ -24,5 +35,16 @@ export const projects: Project[] = [
         date: new Date('2023-12-30 00:00:00'),
         url: 'https://github.com/devrafaelsoares/cpf-generator',
         technologies: [PYTHON],
+    },
+    {
+        developer,
+        title: 'Store API',
+        description: 'APIRESTful de um sistema de gerenciamento de produtos',
+        image: {
+            url: 'projects/store-api.png',
+        },
+        date: new Date('2024-01-03 00:00:00'),
+        url: 'https://github.com/devrafaelsoares/store-api-restful',
+        technologies: [JAVA, SPRINGBOOT, POSTGRESQL, REDIS, DOCKER],
     },
 ];
