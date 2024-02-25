@@ -1,4 +1,4 @@
-import '../../assets/styles/components/_card-project.scss';
+import '@/assets/styles/components/_card-project.scss';
 import CardProjectRoot from './CardProjectRoot';
 import CardProjectDate from './CardProjectDate';
 import CardProjectBody from './CardProjectBody';

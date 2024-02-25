@@ -1,4 +1,4 @@
-import { Developer } from '../types/developer';
+import { Developer } from '@/types/developer';
 
 export const developer: Developer = {
     name: 'Rafael Henrique',

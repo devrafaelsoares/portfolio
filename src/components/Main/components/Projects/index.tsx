@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
-import Reveal from '../../../util/Reveal';
-import { CardProject } from '../../../CardProject';
-import { projects } from '../../../../data/projects';
+import Reveal from '@/components/util/Reveal';
+import { CardProject } from '@/components/CardProject';
+import { projects } from '@/data/projects';
 
 export default function Index(): ReactElement {
     return (

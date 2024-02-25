@@ -1,4 +1,4 @@
-import '../../assets/styles/components/_skill-card.scss';
+import '@/assets/styles/components/_skill-card.scss';
 
 import SkillCardRoot from './SkillCardRoot';
 import SkillCardHeader from './SkillCardHeader';

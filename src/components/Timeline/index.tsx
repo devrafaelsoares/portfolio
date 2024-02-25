@@ -1,6 +1,6 @@
-import { technologyEvents } from '../../data/events';
+import { technologyEvents } from '@/data/events';
 import { MdEmojiEvents, MdEvent, MdScience } from 'react-icons/md';
-import Reveal from '../util/Reveal';
+import Reveal from '@/components/util/Reveal';
 
 export default function Index() {
     return (

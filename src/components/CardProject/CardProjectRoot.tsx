@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactNode } from 'react';
-import { Image } from '../../types/image';
+import { Image } from '@/types/image';
 
 interface CardProjectRootProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;

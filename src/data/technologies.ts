@@ -1,4 +1,4 @@
-import { TechnologieInfo } from '../types/technologie';
+import { TechnologieInfo } from '@/types/technologie';
 
 export const {
     NODEJS,

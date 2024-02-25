@@ -1,10 +1,10 @@
 import { CgMenuRight, CgClose } from 'react-icons/cg';
 import { useContext } from 'react';
-import { MenuResponsiveContext } from '../../contexts/MenuContext';
+import { MenuResponsiveContext } from '@/contexts/MenuContext';
 import classnames from 'classnames';
 import Navigation from './components/Navigation';
-import Logo from '../icons/Logo';
-import '../../assets/styles/components/_header.scss';
+import Logo from '@/components/icons/Logo';
+import '@/assets/styles/components/_header.scss';
 
 export default function Index() {
     const { isActiveMenu, setIsMenuActive } = useContext(MenuResponsiveContext);

@@ -1,5 +1,5 @@
-import { NODEJS, PYTHON, REACT, KEYCLOACK, DOCKER, POSTGRESQL } from '../data/technologies';
-import { TechnologyEvent } from '../types/technology-event';
+import { NODEJS, PYTHON, REACT, KEYCLOACK, DOCKER, POSTGRESQL } from '@/data/technologies';
+import { TechnologyEvent } from '@/types/technology-event';
 
 export const technologyEvents: TechnologyEvent[] = [
     {

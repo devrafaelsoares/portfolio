@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
-import Reveal from '../../../util/Reveal';
-import Timeline from '../../../Timeline';
-import '../../../../assets/styles/components/_timeline.scss';
+import Reveal from '@/components/util/Reveal';
+import Timeline from '@/components/Timeline';
+import '@/assets/styles/components/_timeline.scss';
 export default function Index(): ReactElement {
     return (
         <section data-section className="section main__experiences" id="experiences">
