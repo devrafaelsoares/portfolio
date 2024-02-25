@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 
 interface SKillCardSkills {
     children: ReactNode;
 }
 
 export default function Index({ children }: SKillCardSkills) {
-    return <>{children}</>;
+    return <Fragment>{children}</Fragment>;
 }
