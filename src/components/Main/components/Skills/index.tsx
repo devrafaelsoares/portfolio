@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
-import Reveal from '../../../util/Reveal';
-import { SkillsCard } from '../../../SkillCard';
-import { skills } from '../../../../data/skills';
+import Reveal from '@/components/util/Reveal';
+import { SkillsCard } from '@/components/SkillCard';
+import { skills } from '@/data/skills';
 
 export default function Index(): ReactElement {
     return (

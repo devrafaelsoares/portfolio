@@ -4,8 +4,8 @@ import { PiGraduationCapFill, PiPersonArmsSpreadFill } from 'react-icons/pi';
 import { MdExpandLess } from 'react-icons/md';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
-import { developer } from '../../../../data/developer';
-import Reveal from '../../../util/Reveal';
+import { developer } from '@/data/developer';
+import Reveal from '@/components/util/Reveal';
 
 export default function Index(): ReactElement {
     const [typeWriter] = useTypewriter({

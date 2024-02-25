@@ -1,5 +1,5 @@
 import { FaSquareXTwitter, FaGithub, FaLinkedin } from 'react-icons/fa6';
-import '../../assets/styles/components/_footer.scss';
+import '@/assets/styles/components/_footer.scss';
 
 export default function index() {
     const year = new Date().getFullYear();

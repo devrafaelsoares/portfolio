@@ -1,4 +1,4 @@
-import { Project } from '../types/project';
+import { Project } from '@/types/project';
 import {
     DOCKER,
     JAVA,
@@ -10,8 +10,8 @@ import {
     SPRINGBOOT,
     TAILWINDCSS,
     TYPESCRIPT,
-} from '../data/technologies';
-import { developer } from '../data/developer';
+} from '@/data/technologies';
+import { developer } from '@/data/developer';
 
 export const projects: Project[] = [
     {
