@@ -1,0 +1,19 @@
+.scroll-to-top {
+    background-color: transparent;
+    right: 25px;
+    bottom: 80px;
+    position: fixed;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 40px;
+    border: none;
+    color: #fff;
+}
+
+.scroll-to-top:hover {
+    opacity: 0.8;
+}
+
+.scroll-to-top:active {
+    transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+}
