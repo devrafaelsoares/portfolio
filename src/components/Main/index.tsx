@@ -4,6 +4,8 @@ import Skills from './components/Skills';
 import Experiences from './components/Experiences';
 import Projects from './components/Projects';
 import '@/assets/styles/components/main/_index.scss';
+import ScrollToTop from '@/components/ScroolTop';
+import { FaArrowAltCircleUp } from 'react-icons/fa';
 
 export default function Index(): ReactElement {
     return (
@@ -12,6 +14,7 @@ export default function Index(): ReactElement {
             <Skills />
             <Experiences />
             <Projects />
+            <ScrollToTop component={<FaArrowAltCircleUp />} smooth />
         </main>
     );
 }
