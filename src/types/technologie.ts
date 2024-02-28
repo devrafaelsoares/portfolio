@@ -9,7 +9,8 @@ export type TechnologieName =
     | 'DOCKER'
     | 'POSTGRESQL'
     | 'SPRINGBOOT'
-    | 'REDIS';
+    | 'REDIS'
+    | 'SASS';
 
 export type Technologie = {
     readonly name: string;
