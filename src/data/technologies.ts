@@ -12,6 +12,7 @@ export const {
     POSTGRESQL,
     SPRINGBOOT,
     REDIS,
+    SASS,
 }: TechnologieInfo = {
     REACT: {
         name: 'React',
@@ -67,5 +68,10 @@ export const {
         name: 'Redis',
         slug: 'redis',
         url: 'technologies/redis.svg',
+    },
+    SASS: {
+        name: 'SASS',
+        slug: 'sass',
+        url: 'technologies/sass.svg',
     },
 };
