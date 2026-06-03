@@ -6,18 +6,18 @@ type NavData = {
 export const navData: NavData[] = [
     {
         url: 'apresentation',
-        name: 'Apresentação',
+        name: 'Home',
     },
     {
         url: 'skills',
-        name: 'Habilidades',
+        name: 'Skills',
     },
     {
         url: 'experiences',
-        name: 'Experiências',
+        name: 'Experience',
     },
     {
         url: 'projects',
-        name: 'Projetos',
+        name: 'Projects',
     },
 ];

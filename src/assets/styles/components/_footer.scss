@@ -2,75 +2,109 @@
 
 .container__footer {
     grid-area: footer;
-    display: grid;
-    justify-items: start;
-    grid-template-rows: 3fr;
     width: 100%;
-    padding: 1em 0;
-    background-color: variables.$primary-dark-color;
-    border-top: 1px solid variables.$border-color;
-    color: variables.$white-color;
+    padding: 2.5rem 1.5rem;
+    background-color: variables.$bg-secondary;
+    position: relative;
 
-    .footer__row--top {
-        grid-row: 1;
-        width: 50%;
-        padding: 0 1em;
+    // Gradient top border
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(99, 102, 241, 0.5) 30%,
+            rgba(139, 92, 246, 0.5) 70%,
+            transparent 100%
+        );
+    }
+
+    .footer__inner {
+        max-width: 1100px;
+        margin: 0 auto;
         display: flex;
-        font-size: 20px;
-        align-self: center;
+        justify-content: space-between;
         align-items: center;
-        gap: 1em;
-        img {
-            width: 6em;
-            height: 6em;
-            border-radius: 100%;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
     }
 
+    // ── Copyright ──────────────────────────────────────────────────────
     .footer__row--bottom {
-        grid-row: 3;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 0em 0.5em;
-        align-items: center;
 
+        .row--bottom__copyright {
+            .copyright__text {
+                font-size: 0.82rem;
+                color: variables.$text-muted;
+                font-family: variables.$mono-font;
+
+                strong {
+                    color: variables.$text-secondary;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        // ── Social icons ───────────────────────────────────────────────
         .row--bottom__social-media {
             .social-media__container {
-                width: 100%;
                 display: flex;
-                justify-content: end;
-                padding: 0 2em;
-                display: flex;
-                gap: 1em;
-                .container__icon {
-                    .icon {
-                        font-size: 2.5em;
-                        fill: variables.$white-color;
-                        opacity: 0.5;
-                        transition: ease-in-out 0.2s;
+                gap: 0.625rem;
 
-                        &:hover {
-                            opacity: 1;
-                        }
+                .container__icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    border-radius: var(--radius-sm);
+                    background: var(--glass-bg);
+                    border: 1px solid var(--glass-border);
+                    transition: all 0.25s ease;
+
+                    .icon {
+                        font-size: 1.05rem;
+                        color: variables.$text-muted;
+                        transition: color 0.25s ease;
+                    }
+
+                    &:hover {
+                        transform: translateY(-3px);
+                        border-color: rgba(99, 102, 241, 0.4);
+                        background: rgba(99, 102, 241, 0.1);
+
+                        .icon { color: variables.$accent-hover; }
                     }
                 }
             }
         }
-    }
-    @media (max-width: 820px) {
-        gap: 0.5em;
-        .footer__row--top {
-            width: 100%;
-            flex-direction: column;
-            text-align: center;
-        }
 
-        .footer__row--bottom {
+        // Layout
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        @media (max-width: 600px) {
             flex-direction: column-reverse;
             align-items: center;
-            gap: 1em;
-            padding: 0.5em;
         }
+    }
+
+    .footer__row--top {
+        display: none; // Remove old top row if not needed
     }
 }

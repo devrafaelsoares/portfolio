@@ -1,9 +1,19 @@
 @use '../variables';
 
+body {
+    background-color: variables.$bg-primary;
+    color: variables.$text-primary;
+    // Subtle ambient gradients
+    background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99, 102, 241, 0.1), transparent),
+        radial-gradient(ellipse 50% 40% at 90% 90%, rgba(139, 92, 246, 0.06), transparent);
+}
+
 .container {
     min-height: 100dvh;
-    background-color: variables.$primary-dark-color;
-    color: variables.$white-color;
+    background-color: transparent;
     display: grid;
+    grid-area: main;
     grid-template-areas: variables.$app-layout;
+    grid-template-rows: auto 1fr auto;
 }

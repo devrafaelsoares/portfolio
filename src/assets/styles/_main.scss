@@ -1,12 +1,47 @@
 @use './variables';
 @import './mixins';
 
-* {
+// ─── CSS Custom Properties ────────────────────────────────────────────────────
+:root {
+    --bg-primary:        #{variables.$bg-primary};
+    --bg-secondary:      #{variables.$bg-secondary};
+    --bg-tertiary:       #{variables.$bg-tertiary};
+    --accent:            #{variables.$accent};
+    --accent-hover:      #{variables.$accent-hover};
+    --accent-secondary:  #{variables.$accent-secondary};
+    --accent-emerald:    #{variables.$accent-emerald};
+    --text-primary:      #{variables.$text-primary};
+    --text-secondary:    #{variables.$text-secondary};
+    --text-muted:        #{variables.$text-muted};
+    --border:            #{variables.$border-color};
+    --border-subtle:     #{variables.$border-subtle};
+    --radius-sm:         6px;
+    --radius-md:         12px;
+    --radius-lg:         20px;
+    --glass-bg:          rgba(255, 255, 255, 0.04);
+    --glass-border:      rgba(255, 255, 255, 0.08);
+    --shadow-glow:       0 0 40px rgba(99, 102, 241, 0.15);
+}
+
+// ─── Reset ────────────────────────────────────────────────────────────────────
+*, *::before, *::after {
     margin: 0;
     border: none;
     padding: 0;
     box-sizing: border-box;
     font-family: variables.$primary-font;
+}
+
+// ─── HTML & Body ──────────────────────────────────────────────────────────────
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; // Prevent horizontal scroll from layout bugs
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body:has(.active-menu-responsive) {
@@ -18,16 +53,35 @@ body:has(.active-menu-responsive) {
     }
 }
 
-ul {
-    list-style: none;
+// ─── Scrollbar ────────────────────────────────────────────────────────────────
+::-webkit-scrollbar {
+    width: 5px;
 }
+::-webkit-scrollbar-track {
+    background: variables.$bg-secondary;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.5);
+    border-radius: 3px;
+    &:hover {
+        background: variables.$accent;
+    }
+}
+
+// ─── Selection ────────────────────────────────────────────────────────────────
+::selection {
+    background: rgba(99, 102, 241, 0.25);
+    color: variables.$text-primary;
+}
+
+// ─── Base Elements ────────────────────────────────────────────────────────────
+ul { list-style: none; }
 
 a {
     text-decoration: none;
-    color: variables.$white-color;
+    color: variables.$text-primary;
+    transition: color variables.$transition-fast;
 }
 
 input::-ms-reveal,
-input::-ms-clear {
-    display: none;
-}
+input::-ms-clear { display: none; }

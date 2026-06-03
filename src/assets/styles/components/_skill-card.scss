@@ -1,51 +1,72 @@
 @use '../variables';
 
+// ─── Skill Card — Dark Glass ───────────────────────────────────────────────────
 .skill-card {
-    padding: 20px;
-    width: 250px;
-    background-color: variables.$white-color;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    border-radius: 0.5em;
+    position: relative;
+    padding: 1.5rem;
+    width: 220px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
     cursor: pointer;
-    .skill-card__header {
-        border-start-start-radius: 0.5em;
-        border-start-end-radius: 0.5em;
-    }
-    &:hover,
-    &:focus {
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-        cursor: zoom-in;
-        .skill-card__header {
-            height: 40px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
 
+    // Subtle inner glow on hover
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: var(--radius-lg);
+        background: variables.$gradient-accent;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover, &:focus {
+        transform: translateY(-6px);
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.2), var(--shadow-glow);
+        outline: none;
+
+        &::before { opacity: 0.05; }
+
+        .skill-card__header {
+            height: 36px;
             .skill-card__icon {
-                transform: translateX(-50%) translateY(-50%) scale(3);
+                transform: translateX(-50%) translateY(-50%) scale(2.8);
+                filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.5));
             }
         }
+
         .skill-card__body {
-            height: 170px;
+            height: 160px;
 
-            .skill-card__knowledge {
-                li {
-                    transform: translateX(0);
-                    transition-timing-function: cubic-bezier(0, 1.5, 1, 1);
-                    transition-duration: 0.5s;
+            .skill-card__knowledge li {
+                transform: translateX(0);
+                transition-timing-function: cubic-bezier(0, 1.5, 1, 1);
+                transition-duration: 0.45s;
 
-                    @for $i from 1 through 6 {
-                        &:nth-child(#{$i}) {
-                            transition-delay: $i * 0.25s;
-                        }
+                @for $i from 1 through 6 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: $i * 0.07s;
                     }
                 }
             }
         }
     }
+
+    // ── Icon area ─────────────────────────────────────────────────────
     .skill-card__header {
         position: relative;
-        height: 170px;
-        margin: -20px -20px 20px -20px;
-        transition: height 0.5s;
+        height: 140px;
+        margin: -1.5rem -1.5rem 1rem -1.5rem;
+        transition: height 0.4s ease;
         overflow: hidden;
+        background: rgba(255, 255, 255, 0.02);
+        border-bottom: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 
         .skill-card__icon {
             position: absolute;
@@ -53,35 +74,59 @@
             left: 50%;
             transform: translateY(-50%) translateX(-50%);
             display: block;
-            width: 128px;
-            height: 128px;
-            transition: transform 0.5s;
+            width: 80px;
+            height: 80px;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
         }
     }
+
+    // ── Body ──────────────────────────────────────────────────────────
     .skill-card__body {
-        height: 50px;
-        transition: height 0.5s;
+        height: 44px;
+        transition: height 0.4s ease;
         overflow: hidden;
+        position: relative;
+        z-index: 1;
 
         .skill-card__title {
-            font-size: 1.4em;
-            font-weight: 400;
-            color: variables.$black-color;
+            font-size: 1rem;
+            font-weight: 600;
+            color: variables.$text-primary;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: variables.$mono-font;
         }
+
         .skill-card__duration {
-            color: variables.$light-gray-secondary-color;
+            font-size: 0.75rem;
+            color: variables.$text-muted;
             font-style: italic;
+            margin-top: 2px;
         }
+
         .skill-card__knowledge {
-            margin-top: 10px;
-            color: variables.$dark-gray-color;
+            margin-top: 0.75rem;
 
             li {
-                margin-top: 5px;
+                font-size: 0.82rem;
+                color: variables.$text-muted;
+                margin-top: 4px;
+                transform: translateX(-120%);
                 transition-duration: 0;
-                transition-delay: 0.5s;
-                transform: translateX(-100%);
+                transition-delay: 0.35s;
+                padding-left: 0.875rem;
+                position: relative;
+
+                &::before {
+                    content: '▸';
+                    position: absolute;
+                    left: 0;
+                    color: variables.$accent;
+                    font-size: 0.65rem;
+                    top: 1px;
+                }
             }
         }
     }
