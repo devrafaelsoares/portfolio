@@ -1,8 +1,10 @@
 import { technologyEvents } from '@/data/events';
 import { MdEmojiEvents, MdEvent, MdScience } from 'react-icons/md';
 import Reveal from '@/components/util/Reveal';
+import { useTranslation } from 'react-i18next';
 
 export default function Index() {
+    const { t } = useTranslation();
     return (
         <section className="timeline">
             <ul className="timeline__content">
@@ -18,13 +20,13 @@ export default function Index() {
                                 </div>
                                 <div className="event__year-container">
                                     <MdEvent className="year-container__icon" />
-                                    <p className="year-container__year"> {year}</p>
+                                    <h3 className="year-container__year">{year}</h3>
                                 </div>
                                 <p className="event__about">{about}</p>
                                 {technologies && (
                                     <div className="event__skills-info-container">
                                         <MdScience className="skills-info-container__icon" />
-                                        <p className="skills-info-container__year">Tecnologias</p>
+                                        <p className="skills-info-container__year">{t('experiences.technologies')}</p>
                                     </div>
                                 )}
                                 <div className="event__skills-container">

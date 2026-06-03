@@ -4,13 +4,13 @@ import { TechnologyEvent } from '@/types/technology-event';
 export const technologyEvents: TechnologyEvent[] = [
     {
         year: 2021,
-        title: 'Primeiros passos',
-        about: 'Neste ano, dei início à minha trajetória na área do desenvolvimento de software ao me matricular em busca da minha primeira graduação, aprofundando simultaneamente meus estudos nas mais recentes tecnologias emergentes.',
+        title: 'First Steps',
+        about: 'Started my journey in software development by enrolling in Systems Analysis and Development, diving deep into programming fundamentals and emerging technologies.',
     },
     {
         year: 2023,
-        title: 'Iniciação Científica',
-        about: 'Integro a equipe de desenvolvimento da Faculdade Senac, colaborando com outros estudantes e ex-alunos em um projeto de visão computacional. Nosso objetivo é a implementação de um sistema de reconhecimento facial que possibilitará o controle de acesso e a gestão de presença por meio da identificação facial previamente registrada.',
+        title: 'Research & Development',
+        about: 'Joined the development team at SENAC College, collaborating with students and alumni on a computer vision project. The goal: building a facial recognition system for access control and attendance management using pre-registered facial identification.',
         technologies: [PYTHON, KEYCLOACK, NODEJS, DOCKER, POSTGRESQL, REACT],
     },
 ];

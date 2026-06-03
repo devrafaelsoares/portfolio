@@ -1,12 +1,122 @@
+@use '../../variables';
+
 .main__skills {
     grid-area: section-skills;
-    min-height: 100vh;
+    padding: 5rem 0 7rem;
+    position: relative;
 
-    .content__skills {
+    // Subtle top divider
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 1px;
+        background: variables.$gradient-accent;
+        border-radius: 1px;
+    }
+
+    // ── Outer grid of categories ─────────────────────────────────────
+    .skills__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-        padding: 2em;
-        gap: 1em;
-        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+            padding: 0 1rem;
+        }
+    }
+
+    // ── Category card ────────────────────────────────────────────────
+    .skill-category {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+
+        &:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            background: rgba(99, 102, 241, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(99, 102, 241, 0.12);
+        }
+
+        // ── Header: icon + label ──────────────────────────────────────
+        &__header {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding-bottom: 0.875rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        &__icon {
+            font-size: 1rem;
+            color: variables.$accent;
+            flex-shrink: 0;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        &__label {
+            font-family: variables.$mono-font;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: variables.$accent;
+        }
+
+        // ── Chips row ─────────────────────────────────────────────────
+        &__chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+    }
+
+    // ── Individual tech chip ──────────────────────────────────────────
+    .tech-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 0.875rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 100px;
+        cursor: default;
+        transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            border-color: rgba(99, 102, 241, 0.35);
+            background: rgba(99, 102, 241, 0.1);
+            transform: scale(1.04);
+        }
+
+        &__icon {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        &__name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: variables.$text-secondary;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+        }
     }
 }

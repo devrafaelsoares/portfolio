@@ -1,0 +1,40 @@
+{
+  "translation": {
+    "header": {
+      "language": "PT"
+    },
+    "apresentation": {
+      "greeting": "Hi, I am",
+      "role": "Systems Analyst",
+      "about_html": "Full Stack Developer focused on building robust and scalable applications — from the backend with <1>Java / Spring Boot</1> to the frontend with <3>React & TypeScript</3>. Passionate about best practices, clean architecture, and solutions that make a difference.",
+      "see_projects": "See projects",
+      "open_to_work": "open to work"
+    },
+    "nav": {
+      "home": "Home",
+      "skills": "Skills",
+      "experience": "Experience",
+      "projects": "Projects"
+    },
+    "experiences": {
+      "title": "Experience",
+      "technologies": "Technologies"
+    },
+    "projects": {
+      "title": "Projects",
+      "github_link": "View on GitHub",
+      "more_projects": "↓ See more projects",
+      "less_projects": "↑ See fewer projects"
+    },
+    "skills": {
+      "title": "Tech Stack",
+      "categories": {
+        "languages": "Languages",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database": "Databases",
+        "infrastructure": "Infrastructure"
+      }
+    }
+  }
+}

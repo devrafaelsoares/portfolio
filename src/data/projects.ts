@@ -4,12 +4,10 @@ import {
     JAVA,
     NODEJS,
     POSTGRESQL,
-    PYTHON,
     REACT,
     REDIS,
     SASS,
     SPRINGBOOT,
-    TAILWINDCSS,
     TYPESCRIPT,
 } from '@/data/technologies';
 import { developer } from '@/data/developer';
@@ -17,58 +15,52 @@ import { developer } from '@/data/developer';
 export const projects: Project[] = [
     {
         developer,
-        title: 'Coutdown',
-        description: 'Contador regressivo para marcação de eventos',
-        image: {
-            url: 'projects/countdown.jpeg',
-        },
-        date: new Date('2023-11-01 00:00:00'),
-        url: 'https://github.com/devrafaelsoares/react-countdown',
-        technologies: [TYPESCRIPT, REACT, NODEJS, TAILWINDCSS],
+        title: 'URL Shortener',
+        description:
+            'Full RESTful API to shorten and manage URLs, with access tracking, authentication and live Swagger docs. Deployed on Render.',
+        image: { url: 'projects/url-shortener.png' },
+        date: new Date('2025-01-12'),
+        url: 'https://github.com/devrafaelsoares/url-shortener',
+        technologies: [TYPESCRIPT, NODEJS, POSTGRESQL, REDIS, DOCKER],
     },
     {
         developer,
-        title: 'CPF Validator',
-        description: 'Sistema de validação de CPF',
-        image: {
-            url: 'projects/cpf-generator.png',
-        },
-        date: new Date('2023-12-30 00:00:00'),
-        url: 'https://github.com/devrafaelsoares/cpf-generator',
-        technologies: [PYTHON],
-    },
-    {
-        developer,
-        title: 'Store API',
-        description: 'APIRESTful de um sistema de gerenciamento de produtos',
-        image: {
-            url: 'projects/store-api.png',
-        },
-        date: new Date('2024-01-03 00:00:00'),
+        title: 'Store API RESTful',
+        description:
+            'RESTful API for product and shopping cart management, with Redis cache, Docker containerization and PostgreSQL database.',
+        image: { url: 'projects/store-api.png' },
+        date: new Date('2024-01-03'),
         url: 'https://github.com/devrafaelsoares/store-api-restful',
         technologies: [JAVA, SPRINGBOOT, POSTGRESQL, REDIS, DOCKER],
     },
     {
         developer,
-        title: 'Github Profiles App',
-        description: 'Aplicação Web que permiti a busca das informações de um usuário existente no Github',
-        image: {
-            url: 'projects/github-profiles-app.png',
-        },
-        date: new Date('2024-02-08 00:00:00'),
-        url: 'https://github.com/devrafaelsoares/github-profiles-app',
-        technologies: [TYPESCRIPT, REACT, SASS, DOCKER],
+        title: 'Spring Boot Auth',
+        description:
+            'Complete authentication system with Spring Security and JWT (RFC 7519): sign-up, login, e-mail verification and role-based access control.',
+        image: { url: 'projects/spring-auth.png' },
+        date: new Date('2024-02-12'),
+        url: 'https://github.com/devrafaelsoares/spring-app-auth',
+        technologies: [JAVA, SPRINGBOOT, POSTGRESQL, DOCKER],
     },
     {
         developer,
-        title: 'Todo List App',
+        title: 'NLW Journey — Trip Planner',
         description:
-            'Aplicação Web que realizar o gerenciamentos de tarefas. Permitindo a criação, edição e conclusão de suas tarefas',
-        image: {
-            url: 'projects/todo-list-app.png',
-        },
-        date: new Date('2024-02-25 00:00:00'),
-        url: 'https://github.com/devrafaelsoares/todo-list',
+            'Travel planning app built during Rocketseat NLW. Create trip itineraries, add daily activities and invite participants.',
+        image: { url: 'projects/nlw-journey.png' },
+        date: new Date('2024-09-16'),
+        url: 'https://github.com/devrafaelsoares/nlw-journey-trip-planner',
+        technologies: [TYPESCRIPT, NODEJS, REACT, DOCKER],
+    },
+    {
+        developer,
+        title: 'GitHub Profiles App',
+        description:
+            'Web app that fetches and displays public GitHub profiles in real time — repositories, top languages and user metrics.',
+        image: { url: 'projects/github-profiles-app.png' },
+        date: new Date('2024-02-08'),
+        url: 'https://github.com/devrafaelsoares/github-profiles-app',
         technologies: [TYPESCRIPT, REACT, SASS, DOCKER],
     },
 ];

@@ -1,71 +1,89 @@
 import { ReactElement, useState } from 'react';
 import Reveal from '@/components/util/Reveal';
-import { CardProject } from '@/components/CardProject';
 import { projects } from '@/data/projects';
+import { FaGithub } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
+import '@/assets/styles/components/_card-project.scss';
+
 
 export default function Index(): ReactElement {
     const [expanded, setExpanded] = useState(false);
     const projectsForDisplay = expanded ? projects : projects.slice(0, 3);
+    const { t, i18n } = useTranslation();
+
+    const formatDate = (date: Date) =>
+        date.toLocaleDateString(i18n.language === 'pt-BR' ? 'pt-BR' : 'en-US', { month: 'short', year: 'numeric' });
 
     return (
         <section data-section className="section main__projects" id="projects">
-            <Reveal delay={0.8}>
+            <Reveal delay={0.3}>
                 <div className="section__content">
-                    <h1 className="section-title projects__title">Projetos</h1>
+                    <h1 className="section-title projects__title">{t('projects.title')}</h1>
                 </div>
             </Reveal>
+
             <div className="section__projects">
-                <Reveal delay={0.9}>
-                    <section className="project card">
+                <div className="project card">
+                    <div className="section__card-grid">
                         {projectsForDisplay.map(
                             ({ developer, date, image, title, url, description, technologies }, index) => {
-                                const delay = (index + 12) / 10;
+                                const delay = (index + 2) / 10;
                                 return (
-                                    <Reveal delay={delay}>
-                                        <CardProject.Root
+                                    <Reveal key={index} delay={delay}>
+                                        <div
                                             tabIndex={0}
-                                            key={index}
                                             className="card__wrapper"
-                                            banner={image}
+                                            style={{ backgroundImage: `url(${image.url})` }}
                                         >
-                                            <CardProject.Date date={date} />
-                                            <CardProject.Body>
-                                                <div className="content">
-                                                    <span className="author">{developer.username}</span>
-                                                    <h1 className="title">
-                                                        <a href={url} target="_blank">
-                                                            {title}
-                                                        </a>
-                                                    </h1>
-                                                    <p className="text">{description}</p>
-                                                    <div className="skills">
-                                                        {technologies?.map((technologie, index) => (
-                                                            <img
-                                                                key={index}
-                                                                className="skills__skill"
-                                                                src={technologie.url}
-                                                            ></img>
-                                                        ))}
-                                                    </div>
-                                                    <a href={url} target="_blank" className="button">
-                                                        Ver mais
+                                            <div className="card__overlay" />
+
+                                            {/* Date badge */}
+                                            <div className="card__header-info">
+                                                <span className="date">{formatDate(date)}</span>
+                                            </div>
+
+                                            {/* Body */}
+                                            <div className="card__body-content">
+                                                <span className="author">@{developer.username}</span>
+                                                <h2 className="title">
+                                                    <a href={url} target="_blank" rel="noreferrer">
+                                                        {title}
                                                     </a>
+                                                </h2>
+                                                <p className="text">{description}</p>
+
+                                                <div className="skills">
+                                                    {technologies?.map((tech, i) => (
+                                                        <img
+                                                            key={i}
+                                                            className="skills__skill"
+                                                            src={tech.url}
+                                                            alt={tech.name}
+                                                            title={tech.name}
+                                                        />
+                                                    ))}
                                                 </div>
-                                            </CardProject.Body>
-                                        </CardProject.Root>
+
+                                                <a href={url} target="_blank" rel="noreferrer" className="button">
+                                                    <FaGithub />
+                                                    {t('projects.github_link')}
+                                                </a>
+                                            </div>
+                                        </div>
                                     </Reveal>
                                 );
                             }
                         )}
-                        {projects.length > 3 && (
-                            <Reveal delay={1.3}>
-                                <button onClick={() => setExpanded(!expanded)} className="more-projects-button">
-                                    {expanded ? 'Menos' : 'Mais'} projetos
-                                </button>
-                            </Reveal>
-                        )}
-                    </section>
-                </Reveal>
+                    </div>
+
+                    {projects.length > 3 && (
+                        <Reveal delay={0.5}>
+                            <button onClick={() => setExpanded(!expanded)} className="more-projects-button">
+                                {expanded ? t('projects.less_projects') : t('projects.more_projects')}
+                            </button>
+                        </Reveal>
+                    )}
+                </div>
             </div>
         </section>
     );

@@ -1,10 +1,12 @@
 @use '../../variables';
+@import '../../mixins';
 @import './section-apresentation';
 @import './section-about-me';
 @import './section-skills';
 @import './section-experiences';
 @import './section-projects';
 
+// ─── Main container ───────────────────────────────────────────────────────────
 .container__main {
     display: grid;
     grid-area: main;
@@ -12,11 +14,32 @@
 
     .section {
         .section-title {
-            font-size: variables.$title-size;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
             text-align: center;
+            letter-spacing: -0.03em;
+            color: variables.$text-primary;
+            position: relative;
+            display: inline-block;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 48px;
+                height: 3px;
+                background: variables.$gradient-accent;
+                border-radius: 2px;
+            }
         }
     }
+
     .section__content {
-        margin-top: variables.$section-separator-margin-top;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
     }
 }

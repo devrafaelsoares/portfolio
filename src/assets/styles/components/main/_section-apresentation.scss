@@ -1,137 +1,396 @@
+@use '../../variables';
+
 .main__apresentation {
     grid-area: section-initial;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding-top: 70px;
+    position: relative;
+    overflow-x: hidden;
 
+    // Subtle grid backdrop
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(99, 102, 241, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(99, 102, 241, 0.035) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 80%);
+        -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 80%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    // ── Main flex row ───────────────────────────────────────────────────
     .apresentation__section {
-        width: 80%;
+        width: min(92%, 1100px);
         display: flex;
-        gap: 1em;
-        justify-content: center;
+        flex-direction: row;
+        gap: 5rem;
+        justify-content: space-between;
         align-items: center;
-        @media (max-width: 1260px) {
+        padding: 3rem 0 2rem;
+        z-index: 1;
+        position: relative;
+
+        // The Reveal wrapper around terminal
+        > .reveal-component:last-child {
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+            gap: 3rem;
+            padding-top: 2.5rem;
+
+            > .reveal-component:last-child {
+                width: 100%;
+            }
+        }
+    }
+
+    // ── Text column ────────────────────────────────────────────────────
+    .section__my-apresentation {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .reveal-component { width: 100%; }
+
+        @media (max-width: 900px) {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    // ── Badge ──────────────────────────────────────────────────────────
+    .hero__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.875rem;
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.22);
+        border-radius: 100px;
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: variables.$accent-emerald;
+        width: fit-content;
+        letter-spacing: 0.02em;
+
+        .badge__dot {
+            width: 7px;
+            height: 7px;
+            background: variables.$accent-emerald;
+            border-radius: 50%;
+            flex-shrink: 0;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+    }
+
+    @keyframes pulse-dot {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+        50%       { box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+    }
+
+    // ── Greeting + Name block ──────────────────────────────────────────
+    .hero__greeting {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: variables.$text-muted;
+        margin-bottom: 0.2rem;
+        font-family: variables.$mono-font;
+        letter-spacing: 0.02em;
+    }
+
+    .my-apresentation__name {
+        font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: variables.$text-primary;
+        width: 100%;
+    }
+
+    // ── Role line ──────────────────────────────────────────────────────
+    .my-apresentation__role {
+        font-size: clamp(1rem, 2.2vw, 1.3rem);
+        font-weight: 500;
+        color: variables.$text-secondary;
+        letter-spacing: -0.01em;
+        width: 100%;
+
+        .role__separator {
+            color: variables.$text-muted;
+            margin: 0 0.1rem;
+        }
+
+        .role__accent {
+            color: variables.$accent-hover;
+            font-weight: 600;
+        }
+    }
+
+    // ── Bio ────────────────────────────────────────────────────────────
+    .my-apresentation__about {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: variables.$text-secondary;
+        max-width: 500px;
+        width: 100%;
+
+        strong {
+            color: variables.$text-primary;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            max-width: 100%;
+        }
+    }
+
+    // ── CTA Row ────────────────────────────────────────────────────────
+    .hero__cta-row {
+        display: flex;
+        gap: 0.875rem;
+        flex-wrap: wrap;
+        width: 100%;
+
+        @media (max-width: 900px) {
+            justify-content: center;
+        }
+    }
+
+    .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.5rem;
+        border-radius: var(--radius-md);
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        text-decoration: none;
+        white-space: nowrap;
+
+        .btn-icon { font-size: 0.85em; transition: transform 0.25s ease; }
+        .btn-icon-left { font-size: 0.95em; }
+
+        &--primary {
+            background: variables.$gradient-accent;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 28px rgba(99, 102, 241, 0.45);
+                .btn-icon { transform: translateX(4px); }
+            }
+        }
+
+        &--secondary {
+            background: var(--glass-bg);
+            color: variables.$text-primary;
+            border: 1px solid var(--glass-border);
+
+            &:hover {
+                background: rgba(255,255,255,0.08);
+                border-color: rgba(99, 102, 241, 0.3);
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    // ── Social link (GitHub with username) ─────────────────────────────
+    .hero__social-row { width: 100%; }
+
+    .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        font-family: variables.$mono-font;
+        color: variables.$text-muted;
+        transition: color 0.2s ease;
+
+        svg { font-size: 1.1rem; }
+
+        &:hover { color: variables.$text-primary; }
+    }
+
+    // ── Terminal window ────────────────────────────────────────────────
+    .hero__terminal {
+        width: clamp(280px, 38vw, 420px);
+        background: rgba(10, 10, 20, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius-lg);
+        backdrop-filter: blur(20px);
+        overflow: hidden;
+        box-shadow:
+            0 24px 48px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(99, 102, 241, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        font-family: variables.$mono-font;
+        flex-shrink: 0;
+
+        @media (max-width: 900px) {
             width: 100%;
         }
+    }
 
-        .section__my-apresentation {
-            position: relative;
-            width: 65%;
-            border-bottom: 1px solid variables.$border-color;
-            padding: 2em 0;
-            .heading-top-line {
-                width: 148px;
-                min-height: 4px;
-                margin: 1em 0;
-                background-color: variables.$white-color;
-            }
-            .my-apresentation__name {
-                font-size: 5rem;
-            }
+    .terminal__topbar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        background: rgba(255, 255, 255, 0.04);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
 
-            .my-apresentation__social-media-row {
-                .social-media-row__container {
-                    width: 100%;
-                    display: flex;
-                    padding: 1em 0;
-                    display: flex;
-                    gap: 1em;
-                    .container__icon {
-                        .icon {
-                            font-size: 2.5em;
-                            fill: variables.$white-color;
-                            opacity: 0.5;
-                            transition: ease-in-out 0.2s;
+    .terminal__dots {
+        display: flex;
+        gap: 6px;
 
-                            &:hover {
-                                opacity: 1;
-                            }
-                        }
-                    }
-                }
-            }
-            .my-apresentation__extras {
-                width: 85%;
-                display: grid;
-                gap: 0.5em;
-                .extras__accordion {
-                    background-color: #f1f1f1;
-                    .accordion__summary {
-                        .summary__typography {
-                            display: flex;
-                            align-items: center;
-                            gap: 0.5em;
+        span {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+        .dot--red    { background: #ff5f57; }
+        .dot--yellow { background: #febc2e; }
+        .dot--green  { background: #28c840; }
+    }
 
-                            .typography__icon {
-                                font-size: 1.3em;
-                            }
-                        }
-                    }
-                }
-            }
+    .terminal__title {
+        flex: 1;
+        text-align: center;
+        font-size: 0.73rem;
+        color: rgba(255, 255, 255, 0.3);
+        letter-spacing: 0.05em;
+        margin-right: 40px; // Balance with dots
+    }
+
+    .terminal__body {
+        padding: 1.25rem 1.5rem 1.5rem;
+        font-size: 0.85rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    // Line with prompt
+    .t-line {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: rgba(255, 255, 255, 0.2);
+
+        &.t-gap { margin-top: 0.85rem; }
+    }
+
+    .t-prompt {
+        color: variables.$accent;
+        font-weight: 600;
+        user-select: none;
+    }
+
+    .t-cmd { color: variables.$text-secondary; }
+
+    // Output lines
+    .t-output {
+        padding-left: 1.1rem;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.7;
+
+        &.t-name {
+            color: variables.$text-primary;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        .my-apresentation__photo {
-            position: relative;
-            @media (max-width: 1260px) {
-                order: -1;
-            }
-            .my-photo {
-                border-radius: 50%;
-                box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1), 1px 3px 16px 2px rgba(0, 0, 0, 1);
-            }
+        &.t-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: variables.$accent-emerald;
         }
-        @media (max-width: 1260px) {
-            gap: 0;
-            padding-top: 6em;
-            display: grid;
-            justify-items: center;
-            .section__my-apresentation {
-                .heading-top-line {
-                    width: 0;
-                }
-            }
-            .reveal-component {
-                display: grid;
-                justify-items: center;
-            }
-            .my-apresentation__photo {
-                .my-photo {
-                    width: 15em;
-                }
-            }
+    }
+
+    // Skill tags inside terminal
+    .t-tag {
+        display: inline-block;
+        padding: 0.1rem 0.5rem;
+        margin: 0.15rem 0.25rem 0.15rem 0;
+        background: rgba(99, 102, 241, 0.12);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 4px;
+        color: variables.$accent-hover;
+        font-size: 0.78rem;
+        font-weight: 500;
+    }
+
+    .t-dot-green {
+        width: 7px;
+        height: 7px;
+        background: variables.$accent-emerald;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    // Blinking cursor
+    .t-cursor-line { margin-top: 0.85rem; }
+
+    .t-cursor {
+        color: variables.$accent;
+        animation: blink 1.2s step-end infinite;
+        font-weight: 400;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0; }
+    }
+
+    // ── Scroll indicator ───────────────────────────────────────────────
+    .scroll-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding-bottom: 2.5rem;
+        opacity: 0.3;
+        animation: fade-bounce 2.5s ease-in-out infinite;
+        z-index: 1;
+
+        .scroll-indicator__line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, variables.$accent, transparent);
         }
 
-        @media (max-width: 870px) {
-            .section__my-apresentation {
-                .my-apresentation__name {
-                    font-size: 3rem;
-                }
-
-                .my-apresentation__specialization {
-                    font-size: 1em;
-                }
-            }
+        span {
+            font-family: variables.$mono-font;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: variables.$text-muted;
         }
 
-        @media (max-width: 480px) {
-            padding-top: 0;
-            .section__my-apresentation {
-                width: 90%;
-                .my-apresentation__name {
-                    font-size: 2.3rem;
-                }
+        @media (max-width: 600px) { display: none; }
+    }
 
-                .my-apresentation__specialization {
-                    font-size: 1em;
-                }
-            }
-            .my-apresentation__photo {
-                .my-photo {
-                    width: 12em;
-                }
-            }
-        }
+    @keyframes fade-bounce {
+        0%, 100% { transform: translateY(0);   opacity: 0.3; }
+        50%       { transform: translateY(8px); opacity: 0.5; }
     }
 }

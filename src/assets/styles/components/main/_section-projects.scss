@@ -1,26 +1,39 @@
-@import '../../variables';
+@use '../../variables';
 
 .main__projects {
     grid-area: section-projects;
-    min-height: 100vh;
+    padding: 5rem 0;
 
     .section__projects {
-        padding: 3em 0;
         display: flex;
         justify-content: center;
         width: 100%;
+        padding: 0 1rem;
     }
 
+    // ── "Ver mais" button ──────────────────────────────────────────────
     .more-projects-button {
-        background-color: variables.$light-blue-color;
-        color: variables.$white-color;
-        padding: 0.5em 1em;
-        border-radius: 0.5em;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--glass-bg);
+        color: variables.$text-secondary;
+        border: 1px solid variables.$border-color;
+        padding: 0.7rem 1.75rem;
+        border-radius: var(--radius-md);
         cursor: pointer;
-        font-size: 1em;
-        margin-top: 2em;
+        font-size: 0.9rem;
+        font-weight: 500;
+        font-family: variables.$mono-font;
+        margin-top: 2.5rem;
+        transition: all 0.25s ease;
+        letter-spacing: 0.01em;
+
         &:hover {
-            opacity: 0.7;
+            background: rgba(99, 102, 241, 0.1);
+            border-color: variables.$accent;
+            color: variables.$accent-hover;
+            transform: translateY(-2px);
         }
     }
 }

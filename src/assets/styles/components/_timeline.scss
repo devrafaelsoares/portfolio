@@ -1,121 +1,162 @@
 @use '../variables';
 
-$background: #252827;
+// ─── Timeline ─────────────────────────────────────────────────────────────────
 
-$color-primary: #004ffc;
-$color-dim: #6c6d6d;
-$spacing: 50px;
-$radius: 4px;
-
-$date: 120px;
-$dotborder: 4px;
-$dot: 11px;
-$line: 4px;
-
-strong {
-    font-weight: 600;
-}
-
-h1 {
-    letter-spacing: 1.5px;
-    color: variables.$white-color;
-    font-weight: 400;
-    font-size: 2.4em;
-}
+$dot-size:        12px;
+$dot-border:       3px;
+$line-width:       2px;
+$spacing:         48px;
 
 .timeline {
     margin-top: $spacing;
     display: flex;
     justify-content: center;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .timeline__content {
-    border-left: $line solid $color-primary;
-    border-bottom-right-radius: $radius;
-    border-top-right-radius: $radius;
-    background: fade(variables.$white-color, 3%);
-    color: fade(white, 80%);
-    letter-spacing: 0.5px;
     position: relative;
-    display: grid;
-    gap: 2em;
-    line-height: 1.4em;
-    font-size: 1.03em;
-    width: 80%;
-    padding: $spacing 0 $spacing 2em;
+    width: min(90%, 720px);
+    padding: $spacing 0 $spacing 2.5rem;
     list-style: none;
     text-align: left;
-    font-weight: 100;
 
-    h1 {
-        letter-spacing: 1.5px;
-        font-weight: 100;
-        font-size: 1.4em;
+    // Gradient vertical line
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $line-width;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            variables.$accent 15%,
+            variables.$accent-secondary 70%,
+            transparent 100%
+        );
+        border-radius: 1px;
     }
 
-    h2,
-    h3 {
-        letter-spacing: 1.5px;
-        font-weight: 400;
-        font-size: 1.4em;
-    }
-
+    // ── Individual event ──────────────────────────────────────────────
     .event {
-        border-bottom: 1px dashed fade(variables.$white-color, 10%);
-        padding-bottom: ($spacing * 0.5);
-        margin-bottom: $spacing;
         position: relative;
+        padding-bottom: $spacing * 1.2;
+        margin-bottom: 0;
         display: grid;
-        gap: 0.5em;
+        gap: 0.75rem;
+
         &:last-of-type {
             padding-bottom: 0;
-            margin-bottom: 0;
-            border: none;
         }
 
-        &:before,
-        &:after {
-            position: absolute;
-            display: block;
-            top: 0;
-        }
-
-        &:after {
-            box-shadow: 0 0 0 $dotborder fade($color-primary, 100%);
-            left: -40px;
-            background: lighten($background, 5%);
-            border-radius: 50%;
-            height: $dot;
-            width: $dot;
+        // Glowing dot
+        &::after {
             content: '';
-            top: 5px;
+            position: absolute;
+            left: calc(-2.5rem - #{$dot-size * 0.5} + #{$line-width * 0.5});
+            top: 4px;
+            width: $dot-size;
+            height: $dot-size;
+            border-radius: 50%;
+            background: variables.$accent;
+            border: $dot-border solid variables.$bg-primary;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3), 0 0 12px rgba(99, 102, 241, 0.4);
+            z-index: 1;
+            animation: dot-pulse 3s ease-in-out infinite;
         }
 
-        &.__year-container {
-            display: flex;
+        @keyframes dot-pulse {
+            0%, 100% { box-shadow: 0 0 0 3px rgba(99,102,241,0.3), 0 0 12px rgba(99,102,241,0.4); }
+            50%       { box-shadow: 0 0 0 6px rgba(99,102,241,0.1), 0 0 20px rgba(99,102,241,0.6); }
         }
 
-        &__skills-container {
+        // ── Year badge ─────────────────────────────────────────────
+        &.__year-container,
+        &__year-container {
             display: inline-flex;
-            gap: 0.5em;
             align-items: center;
-            .skill {
-                width: 1.5em;
+            gap: 0.5rem;
+
+            h3 {
+                font-family: variables.$mono-font;
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: variables.$accent;
+                background: rgba(99, 102, 241, 0.1);
+                border: 1px solid rgba(99, 102, 241, 0.25);
+                padding: 0.2rem 0.65rem;
+                border-radius: 100px;
+                letter-spacing: 0.06em;
+            }
+
+            .year-container__icon {
+                color: variables.$accent;
+                font-size: 1rem;
             }
         }
 
-        &__skills-info-container,
-        &__title-container,
-        &__year-container {
+        // ── Title ─────────────────────────────────────────────────
+        &__title-container {
             display: flex;
             align-items: center;
-            gap: 0.5em;
+            gap: 0.5rem;
+
+            h2 {
+                font-size: 1.45rem;
+                font-weight: 600;
+                color: variables.$text-primary;
+                letter-spacing: -0.01em;
+            }
+
+            .title-container__icon {
+                color: variables.$accent-secondary;
+                font-size: 1rem;
+            }
         }
-        .skills-info-container__icon,
-        .year-container__icon,
-        .title-container__icon {
-            font-size: 1.2em;
+
+        // ── About text ─────────────────────────────────────────────
+        p, .event__about {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: variables.$text-muted;
+            max-width: 600px;
+        }
+
+        // ── Skills row ─────────────────────────────────────────────
+        &__skills-container {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+
+            .skill {
+                width: 1.4rem;
+                height: 1.4rem;
+                object-fit: contain;
+                filter: grayscale(20%);
+                transition: filter 0.2s ease, transform 0.2s ease;
+
+                &:hover {
+                    filter: none;
+                    transform: scale(1.15);
+                }
+            }
+        }
+
+        &__skills-info-container {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.95rem;
+            color: variables.$text-muted;
+
+            .skills-info-container__icon {
+                font-size: 0.9rem;
+                color: variables.$accent-secondary;
+            }
         }
     }
 }

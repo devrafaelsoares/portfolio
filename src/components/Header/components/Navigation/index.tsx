@@ -3,9 +3,11 @@ import { MenuResponsiveContext } from '../../../../contexts/MenuContext';
 import { navData } from '../../../../data/nav';
 import { Link } from 'react-scroll';
 import classnames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 export default function Index() {
     const { isActiveMenu, setIsMenuActive } = useContext(MenuResponsiveContext);
+    const { t } = useTranslation();
 
     useEffect(() => {
         if (isActiveMenu) document.body.classList.add('active-menu-responsive');
@@ -25,7 +27,7 @@ export default function Index() {
                             smooth
                             spy
                         >
-                            {name}
+                            {t(`nav.${name.toLowerCase()}`)}
                         </Link>
                     </li>
                 ))}
