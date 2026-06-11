@@ -3,28 +3,30 @@
 
 // ─── CSS Custom Properties ────────────────────────────────────────────────────
 :root {
-    --bg-primary:        #{variables.$bg-primary};
-    --bg-secondary:      #{variables.$bg-secondary};
-    --bg-tertiary:       #{variables.$bg-tertiary};
-    --accent:            #{variables.$accent};
-    --accent-hover:      #{variables.$accent-hover};
-    --accent-secondary:  #{variables.$accent-secondary};
-    --accent-emerald:    #{variables.$accent-emerald};
-    --text-primary:      #{variables.$text-primary};
-    --text-secondary:    #{variables.$text-secondary};
-    --text-muted:        #{variables.$text-muted};
-    --border:            #{variables.$border-color};
-    --border-subtle:     #{variables.$border-subtle};
-    --radius-sm:         6px;
-    --radius-md:         12px;
-    --radius-lg:         20px;
-    --glass-bg:          rgba(255, 255, 255, 0.04);
-    --glass-border:      rgba(255, 255, 255, 0.08);
-    --shadow-glow:       0 0 40px rgba(99, 102, 241, 0.15);
+    --bg-primary: #{variables.$bg-primary};
+    --bg-secondary: #{variables.$bg-secondary};
+    --bg-tertiary: #{variables.$bg-tertiary};
+    --accent: #{variables.$accent};
+    --accent-hover: #{variables.$accent-hover};
+    --accent-secondary: #{variables.$accent-secondary};
+    --accent-emerald: #{variables.$accent-emerald};
+    --text-primary: #{variables.$text-primary};
+    --text-secondary: #{variables.$text-secondary};
+    --text-muted: #{variables.$text-muted};
+    --border: #{variables.$border-color};
+    --border-subtle: #{variables.$border-subtle};
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
 }
 
 // ─── Reset ────────────────────────────────────────────────────────────────────
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     border: none;
     padding: 0;
@@ -75,7 +77,9 @@ body:has(.active-menu-responsive) {
 }
 
 // ─── Base Elements ────────────────────────────────────────────────────────────
-ul { list-style: none; }
+ul {
+    list-style: none;
+}
 
 a {
     text-decoration: none;
@@ -84,4 +88,6 @@ a {
 }
 
 input::-ms-reveal,
-input::-ms-clear { display: none; }
+input::-ms-clear {
+    display: none;
+}

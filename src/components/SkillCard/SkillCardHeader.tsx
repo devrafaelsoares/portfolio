@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 interface SkillCardHeaderProps extends HTMLAttributes<HTMLElement> {
     children: ReactNode;
@@ -6,7 +6,7 @@ interface SkillCardHeaderProps extends HTMLAttributes<HTMLElement> {
 
 export default function Index({ children, ...rest }: SkillCardHeaderProps) {
     return (
-        <header className="skill-card__header" {...rest}>
+        <header className='skill-card__header' {...rest}>
             {children}
         </header>
     );

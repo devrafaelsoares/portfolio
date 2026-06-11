@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 
 interface SkillTitleProps extends HTMLAttributes<HTMLHeadingElement> {
     title: string;
@@ -6,7 +6,7 @@ interface SkillTitleProps extends HTMLAttributes<HTMLHeadingElement> {
 
 export default function Index({ title, ...rest }: SkillTitleProps) {
     return (
-        <h2 className="skill-card__title" {...rest}>
+        <h2 className='skill-card__title' {...rest}>
             {title}
         </h2>
     );

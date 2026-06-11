@@ -3,5 +3,5 @@ interface SkillCardDescriptionProps {
 }
 
 export default function Index({ description }: SkillCardDescriptionProps) {
-    return <span className="skill-card__duration">{description}</span>;
+    return <span className='skill-card__duration'>{description}</span>;
 }

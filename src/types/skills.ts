@@ -1,4 +1,4 @@
-import { Technologie } from './technologie';
+import type { Technologie } from './technologie';
 
 export type Skills = {
     readonly technologie: Technologie;

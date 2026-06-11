@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 interface SkillCardBody extends HTMLAttributes<HTMLElement> {
     children: ReactNode;
@@ -6,7 +6,7 @@ interface SkillCardBody extends HTMLAttributes<HTMLElement> {
 
 export default function Index({ children, ...rest }: SkillCardBody) {
     return (
-        <section className="skill-card__body" {...rest}>
+        <section className='skill-card__body' {...rest}>
             {children}
         </section>
     );

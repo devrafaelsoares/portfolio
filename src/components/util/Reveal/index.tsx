@@ -1,5 +1,6 @@
-import { Variants, motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import type { Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import type { ReactNode } from 'react';
 
 type Props = {
     children: ReactNode;
@@ -15,11 +16,11 @@ const variants: Variants = {
 export default function Index({ children, delay = 0.25, duration = 0.5 }: Props) {
     return (
         <motion.div
-            className="reveal-component"
+            className='reveal-component'
             variants={variants}
-            initial="hidden"
+            initial='hidden'
             transition={{ duration, delay }}
-            whileInView="visible"
+            whileInView='visible'
             viewport={{ once: true }}
         >
             {children}

@@ -18,7 +18,10 @@ $transition-normal: 0.3s ease;
     grid-area: header;
     padding: 0 1.5rem;
     z-index: 100;
-    transition: border-color $transition-normal, background-color $transition-normal, box-shadow $transition-normal;
+    transition:
+        border-color $transition-normal,
+        background-color $transition-normal,
+        box-shadow $transition-normal;
 
     &.scrolled {
         background-color: rgba(variables.$bg-primary, 0.92);
@@ -44,7 +47,9 @@ $transition-normal: 0.3s ease;
             text-decoration: none;
             transition: opacity $transition-normal;
 
-            &:hover { opacity: 0.8; }
+            &:hover {
+                opacity: 0.8;
+            }
 
             .logo-container__icon {
                 width: 2rem;
@@ -85,7 +90,9 @@ $transition-normal: 0.3s ease;
                         font-weight: 500;
                         color: variables.$text-secondary;
                         border-radius: var(--radius-sm);
-                        transition: color $transition-normal, background-color $transition-normal;
+                        transition:
+                            color $transition-normal,
+                            background-color $transition-normal;
                         position: relative;
                         letter-spacing: 0.01em;
 
@@ -106,7 +113,9 @@ $transition-normal: 0.3s ease;
                         &.active {
                             color: variables.$text-primary;
 
-                            &::after { width: calc(100% - 1.75rem); }
+                            &::after {
+                                width: calc(100% - 1.75rem);
+                            }
                         }
 
                         &.active {
@@ -202,6 +211,10 @@ $transition-normal: 0.3s ease;
 
 // ─── Spin animation ───────────────────────────────────────────────────────────
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

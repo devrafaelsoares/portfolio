@@ -2,10 +2,10 @@
 
 // ─── Timeline ─────────────────────────────────────────────────────────────────
 
-$dot-size:        12px;
-$dot-border:       3px;
-$line-width:       2px;
-$spacing:         48px;
+$dot-size: 12px;
+$dot-border: 3px;
+$line-width: 2px;
+$spacing: 48px;
 
 .timeline {
     margin-top: $spacing;
@@ -63,14 +63,25 @@ $spacing:         48px;
             border-radius: 50%;
             background: variables.$accent;
             border: $dot-border solid variables.$bg-primary;
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3), 0 0 12px rgba(99, 102, 241, 0.4);
+            box-shadow:
+                0 0 0 3px rgba(99, 102, 241, 0.3),
+                0 0 12px rgba(99, 102, 241, 0.4);
             z-index: 1;
             animation: dot-pulse 3s ease-in-out infinite;
         }
 
         @keyframes dot-pulse {
-            0%, 100% { box-shadow: 0 0 0 3px rgba(99,102,241,0.3), 0 0 12px rgba(99,102,241,0.4); }
-            50%       { box-shadow: 0 0 0 6px rgba(99,102,241,0.1), 0 0 20px rgba(99,102,241,0.6); }
+            0%,
+            100% {
+                box-shadow:
+                    0 0 0 3px rgba(99, 102, 241, 0.3),
+                    0 0 12px rgba(99, 102, 241, 0.4);
+            }
+            50% {
+                box-shadow:
+                    0 0 0 6px rgba(99, 102, 241, 0.1),
+                    0 0 20px rgba(99, 102, 241, 0.6);
+            }
         }
 
         // ── Year badge ─────────────────────────────────────────────
@@ -118,7 +129,8 @@ $spacing:         48px;
         }
 
         // ── About text ─────────────────────────────────────────────
-        p, .event__about {
+        p,
+        .event__about {
             font-size: 1.05rem;
             line-height: 1.8;
             color: variables.$text-muted;
@@ -137,7 +149,9 @@ $spacing:         48px;
                 height: 1.4rem;
                 object-fit: contain;
                 filter: grayscale(20%);
-                transition: filter 0.2s ease, transform 0.2s ease;
+                transition:
+                    filter 0.2s ease,
+                    transform 0.2s ease;
 
                 &:hover {
                     filter: none;

@@ -1,4 +1,5 @@
-import { useState, useEffect, Fragment, HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { FaArrowAltCircleUp } from 'react-icons/fa';
 
 import '@/assets/styles/components/_scrool-top.scss';
@@ -53,7 +54,7 @@ export default function ScrollToTop({
                 <button
                     className={`scroll-to-top ${className}`}
                     onClick={() => scrollToTop(smooth)}
-                    aria-label="Scroll to top"
+                    aria-label='Scroll to top'
                     {...props}
                 >
                     {component || (

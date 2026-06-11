@@ -1,4 +1,4 @@
-import { Technologie } from './technologie';
+import type { Technologie } from './technologie';
 
 export type TechnologyEvent = {
     readonly year?: number;

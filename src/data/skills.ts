@@ -1,5 +1,13 @@
-import { Skills } from '@/types/skills';
-import { DOCKER, JAVA, NODEJS, POSTGRESQL, REACT, TAILWINDCSS, TYPESCRIPT } from '@/data/technologies';
+import type { Skills } from '@/types/skills';
+import {
+    DOCKER,
+    JAVA,
+    NODEJS,
+    POSTGRESQL,
+    REACT,
+    TAILWINDCSS,
+    TYPESCRIPT,
+} from '@/data/technologies';
 
 export const skills: readonly Skills[] = [
     {

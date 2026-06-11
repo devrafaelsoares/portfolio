@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 interface CardProjectBodyProps {
     children: ReactNode;
 }
 
 export default function Index({ children }: CardProjectBodyProps) {
-    return <div className="data">{children}</div>;
+    return <div className='data'>{children}</div>;
 }

@@ -1,4 +1,4 @@
-import { SocialMedia } from './social-media';
+import type { SocialMedia } from './social-media';
 
 export type Developer = {
     readonly name: string;
