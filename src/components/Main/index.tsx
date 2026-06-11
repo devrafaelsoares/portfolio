@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import Apresentation from './components/Apresentation';
 import Skills from './components/Skills';
 import Experiences from './components/Experiences';
@@ -9,7 +9,7 @@ import { FaArrowAltCircleUp } from 'react-icons/fa';
 
 export default function Index(): ReactElement {
     return (
-        <main className="container__main">
+        <main className='container__main'>
             <Apresentation />
             <Skills />
             <Experiences />

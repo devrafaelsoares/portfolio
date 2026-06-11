@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useState } from 'react';
 
 type MenuResposiveProviverProps = {
     children: ReactNode;
@@ -9,7 +10,9 @@ type MenuResponsiveContextProps = {
     setIsMenuActive: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export const MenuResponsiveContext = createContext<MenuResponsiveContextProps>({} as MenuResponsiveContextProps);
+export const MenuResponsiveContext = createContext<MenuResponsiveContextProps>(
+    {} as MenuResponsiveContextProps,
+);
 
 export default function MenuResposiveProvider({ children }: MenuResposiveProviverProps) {
     const [isActiveMenu, setIsMenuActive] = useState(false);

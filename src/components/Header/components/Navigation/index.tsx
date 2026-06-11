@@ -16,13 +16,13 @@ export default function Index() {
 
     return (
         <nav className={classnames('content__nav', [{ 'active-menu-responsive': isActiveMenu }])}>
-            <ul className="nav__links">
+            <ul className='nav__links'>
                 {navData.map(({ url, name }, index) => (
-                    <li key={index} className="links__link">
+                    <li key={index} className='links__link'>
                         <Link
                             to={url}
                             tabIndex={1}
-                            activeClass="active"
+                            activeClass='active'
                             onClick={() => setIsMenuActive(false)}
                             smooth
                             spy

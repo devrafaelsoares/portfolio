@@ -1,6 +1,6 @@
-import { Developer } from './developer';
-import { Image } from './image';
-import { Technologie } from './technologie';
+import type { Developer } from './developer';
+import type { Image } from './image';
+import type { Technologie } from './technologie';
 
 export type Project = {
     readonly developer: Developer;

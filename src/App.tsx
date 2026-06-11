@@ -8,7 +8,7 @@ import { MenuResponsiveContext } from './contexts/MenuContext';
 export default function App() {
     const [isActiveMenu, setIsMenuActive] = useState(false);
     return (
-        <div className="container">
+        <div className='container'>
             <MenuResponsiveContext.Provider value={{ isActiveMenu, setIsMenuActive }}>
                 <Header />
             </MenuResponsiveContext.Provider>

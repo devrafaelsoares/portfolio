@@ -24,29 +24,50 @@ export default function Index() {
     };
 
     return (
-        <header className={classnames('container__header', { 'active-menu-responsive': isActiveMenu, scrolled })}>
-            <div className="header__content">
-                <div className="content__logo-container" title="devrafaelsoares">
-                    <Logo className="logo-container__icon" />
-                    <h2 className="logo-container__text">
+        <header
+            className={classnames('container__header', {
+                'active-menu-responsive': isActiveMenu,
+                scrolled,
+            })}
+        >
+            <div className='header__content'>
+                <div className='content__logo-container' title='devrafaelsoares'>
+                    <Logo className='logo-container__icon' />
+                    <h2 className='logo-container__text'>
                         <span>dev</span>rafaelsoares
                     </h2>
                 </div>
                 <Navigation />
-                <button 
+                <button
                     onClick={toggleLanguage}
-                    style={{ background: 'transparent', border: '1px solid #6366f1', color: '#a5b4fc', borderRadius: '4px', padding: '4px 10px', cursor: 'pointer', fontWeight: 'bold', marginLeft: 'auto', marginRight: '16px', fontSize: '0.8rem', letterSpacing: '0.05em' }}
-                    title="Mudar Idioma / Change Language"
+                    style={{
+                        background: 'transparent',
+                        border: '1px solid #6366f1',
+                        color: '#a5b4fc',
+                        borderRadius: '4px',
+                        padding: '4px 10px',
+                        cursor: 'pointer',
+                        fontWeight: 'bold',
+                        marginLeft: 'auto',
+                        marginRight: '16px',
+                        fontSize: '0.8rem',
+                        letterSpacing: '0.05em',
+                    }}
+                    title='Mudar Idioma / Change Language'
                 >
                     {i18n.language.startsWith('pt') ? 'EN' : 'PT'}
                 </button>
-                <div className="content__resposive-nav">
+                <div className='content__resposive-nav'>
                     <button
-                        className="menu__button"
+                        className='menu__button'
                         onClick={() => setIsMenuActive(!isActiveMenu)}
                         title={isActiveMenu ? 'Fechar o menu' : 'Abrir o menu'}
                     >
-                        {isActiveMenu ? <CgClose className="icon" /> : <CgMenuRight className="icon" />}
+                        {isActiveMenu ? (
+                            <CgClose className='icon' />
+                        ) : (
+                            <CgMenuRight className='icon' />
+                        )}
                     </button>
                 </div>
             </div>

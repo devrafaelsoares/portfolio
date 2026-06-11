@@ -1,40 +1,40 @@
 {
-  "translation": {
-    "header": {
-      "language": "EN"
-    },
-    "apresentation": {
-      "greeting": "Olá, eu sou",
-      "role": "Analista de Sistemas",
-      "about_html": "Desenvolvedor Full Stack com foco em construir aplicações robustas e escaláveis — do backend com <1>Java / Spring Boot</1> ao frontend com <3>React & TypeScript</3>. Apaixonado por boas práticas, arquitetura limpa e soluções que fazem diferença.",
-      "see_projects": "Ver projetos",
-      "open_to_work": "open to work"
-    },
-    "nav": {
-      "home": "Home",
-      "skills": "Habilidades",
-      "experience": "Experiência",
-      "projects": "Projetos"
-    },
-    "experiences": {
-      "title": "Experiências",
-      "technologies": "Tecnologias"
-    },
-    "projects": {
-      "title": "Projetos",
-      "github_link": "Ver no GitHub",
-      "more_projects": "↓ Ver mais projetos",
-      "less_projects": "↑ Menos projetos"
-    },
-    "skills": {
-      "title": "Stack Técnica",
-      "categories": {
-        "languages": "Linguagens",
-        "frontend": "Frontend",
-        "backend": "Backend",
-        "database": "Banco de dados",
-        "infrastructure": "Infraestrutura"
-      }
+    "translation": {
+        "header": {
+            "language": "EN"
+        },
+        "apresentation": {
+            "greeting": "Olá, eu sou",
+            "role": "Analista de Sistemas",
+            "about_html": "Desenvolvedor Full Stack com foco em construir aplicações robustas e escaláveis — do backend com <1>Java / Spring Boot</1> ao frontend com <3>React & TypeScript</3>. Apaixonado por boas práticas, arquitetura limpa e soluções que fazem diferença.",
+            "see_projects": "Ver projetos",
+            "open_to_work": "open to work"
+        },
+        "nav": {
+            "home": "Home",
+            "skills": "Habilidades",
+            "experience": "Experiência",
+            "projects": "Projetos"
+        },
+        "experiences": {
+            "title": "Experiências",
+            "technologies": "Tecnologias"
+        },
+        "projects": {
+            "title": "Projetos",
+            "github_link": "Ver no GitHub",
+            "more_projects": "↓ Ver mais projetos",
+            "less_projects": "↑ Menos projetos"
+        },
+        "skills": {
+            "title": "Stack Técnica",
+            "categories": {
+                "languages": "Linguagens",
+                "frontend": "Frontend",
+                "backend": "Backend",
+                "database": "Banco de dados",
+                "infrastructure": "Infraestrutura"
+            }
+        }
     }
-  }
 }
