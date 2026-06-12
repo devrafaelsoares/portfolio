@@ -27,13 +27,12 @@
     overflow: hidden;
     cursor: pointer;
 
-    // ── Image rendering — crisp, no blur ────────────────────────────────
+    // ── Image rendering — smooth, high quality ────────────────────────────────
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    // Force crisp rendering on all browsers
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    // Use high-quality image rendering instead of pixelated edges
+    image-rendering: auto;
     // Promote to GPU layer to avoid blurry sub-pixel rendering
     will-change: transform;
     transform: translateZ(0);
