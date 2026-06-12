@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { FaGithub, FaLinkedin, FaArrowRight } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaArrowRight, FaFilePdf } from 'react-icons/fa6';
 import { useTranslation, Trans } from 'react-i18next';
 import { developer } from '@/data/developer';
 import Reveal from '@/components/util/Reveal';
@@ -50,6 +50,13 @@ export default function Index(): ReactElement {
                                 className='cta-btn cta-btn--secondary'
                             >
                                 <FaLinkedin className='btn-icon-left' /> LinkedIn
+                            </a>
+                            <a
+                                href='/resume.pdf'
+                                download='RafaelSoares_Resume.pdf'
+                                className='cta-btn cta-btn--secondary'
+                            >
+                                <FaFilePdf className='btn-icon-left' /> {t('apresentation.download_cv')}
                             </a>
                         </div>
                     </Reveal>
