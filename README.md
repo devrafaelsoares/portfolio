@@ -7,7 +7,7 @@
 
 ## 📜 Seções
 
-Portfólio é composto pelas sequintes seções:
+Portfólio é composto pelas seguintes seções:
 
 -   **Apresentação:** Apresentação do portfólio.
 -   **Habilidades:** Habilidades técnicas
