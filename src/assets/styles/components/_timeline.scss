@@ -43,13 +43,23 @@ $spacing: 48px;
     // ── Individual event ──────────────────────────────────────────────
     .event {
         position: relative;
-        padding-bottom: $spacing * 1.2;
-        margin-bottom: 0;
+        background: #111116;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
         display: grid;
-        gap: 0.75rem;
+        gap: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
         &:last-of-type {
-            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            transform: translateX(6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(99, 102, 241, 0.2);
         }
 
         // Glowing dot
@@ -57,7 +67,7 @@ $spacing: 48px;
             content: '';
             position: absolute;
             left: calc(-2.5rem - #{$dot-size * 0.5} + #{$line-width * 0.5});
-            top: 4px;
+            top: 2.2rem; // Aligned with the title inside the padded card
             width: $dot-size;
             height: $dot-size;
             border-radius: 50%;
@@ -93,19 +103,19 @@ $spacing: 48px;
 
             h3 {
                 font-family: variables.$mono-font;
-                font-size: 0.95rem;
+                font-size: 0.9rem;
                 font-weight: 600;
                 color: variables.$accent;
                 background: rgba(99, 102, 241, 0.1);
                 border: 1px solid rgba(99, 102, 241, 0.25);
-                padding: 0.2rem 0.65rem;
+                padding: 0.25rem 0.75rem;
                 border-radius: 100px;
-                letter-spacing: 0.06em;
+                letter-spacing: 0.05em;
             }
 
             .year-container__icon {
                 color: variables.$accent;
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
         }
 
@@ -113,18 +123,18 @@ $spacing: 48px;
         &__title-container {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
 
             h2 {
-                font-size: 1.45rem;
-                font-weight: 600;
+                font-size: 1.5rem;
+                font-weight: 700;
                 color: variables.$text-primary;
                 letter-spacing: -0.01em;
             }
 
             .title-container__icon {
                 color: variables.$accent-secondary;
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
         }
 
@@ -132,7 +142,7 @@ $spacing: 48px;
         p,
         .event__about {
             font-size: 1.05rem;
-            line-height: 1.8;
+            line-height: 1.7;
             color: variables.$text-muted;
             max-width: 600px;
         }
@@ -141,21 +151,21 @@ $spacing: 48px;
         &__skills-container {
             display: inline-flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.75rem;
             align-items: center;
 
             .skill {
-                width: 1.4rem;
-                height: 1.4rem;
+                width: 1.6rem;
+                height: 1.6rem;
                 object-fit: contain;
-                filter: grayscale(20%);
+                filter: grayscale(15%);
                 transition:
                     filter 0.2s ease,
                     transform 0.2s ease;
 
                 &:hover {
                     filter: none;
-                    transform: scale(1.15);
+                    transform: scale(1.15) translateY(-2px);
                 }
             }
         }
@@ -163,12 +173,15 @@ $spacing: 48px;
         &__skills-info-container {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
             font-size: 0.95rem;
             color: variables.$text-muted;
+            margin-top: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
 
             .skills-info-container__icon {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 color: variables.$accent-secondary;
             }
         }
