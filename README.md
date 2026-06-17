@@ -21,6 +21,23 @@ Portfólio é composto pelas seguintes seções:
 ![NodeJS][node-js-badge]
 ![Sass][sass-badge]
 
+## 🚀 Getting Started
+
+```bash
+# Clone o repositório
+git clone https://github.com/devrafaelsoares/portfolio.git
+
+# Instale as dependências
+yarn install
+
+# Execute em modo de desenvolvimento
+yarn dev
+```
+
+## 🌐 Deploy
+
+O projeto está disponível em: [devrafaelsoares.com.br](https://devrafaelsoares.com.br)
+
 ## 📍 Considerações Finais
 
 [![Linkedin][linkedin-badge]][linkedin-profile]
