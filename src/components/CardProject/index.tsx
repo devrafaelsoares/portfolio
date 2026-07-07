@@ -8,3 +8,4 @@ export const CardProject = {
     Date: CardProjectDate,
     Body: CardProjectBody,
 };
+// EOF
