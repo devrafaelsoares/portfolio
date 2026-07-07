@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { MenuResponsiveContext } from './contexts/MenuContext';
 
 export default function App() {
+    // State to manage responsive menu visibility
     const [isActiveMenu, setIsMenuActive] = useState(false);
     return (
         <div className='container'>
