@@ -15,3 +15,4 @@ export const SkillsCard = {
     Description: SkillCardDescription,
     Skills: SkillCardSkills,
 };
+// EOF
