@@ -10,7 +10,11 @@ export type TechnologieName =
     | 'POSTGRESQL'
     | 'SPRINGBOOT'
     | 'REDIS'
-    | 'SASS';
+    | 'SASS'
+    | 'AI'
+    | 'NEXTJS'
+    | 'RABBITMQ'
+    | 'CSS';
 
 export type Technologie = {
     readonly name: string;

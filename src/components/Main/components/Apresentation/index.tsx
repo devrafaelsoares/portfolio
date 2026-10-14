@@ -56,7 +56,8 @@ export default function Index(): ReactElement {
                                 download='RafaelSoares_Resume.pdf'
                                 className='cta-btn cta-btn--secondary'
                             >
-                                <FaFilePdf className='btn-icon-left' /> {t('apresentation.download_cv')}
+                                <FaFilePdf className='btn-icon-left' />{' '}
+                                {t('apresentation.download_cv')}
                             </a>
                         </div>
                     </Reveal>

@@ -36,51 +36,70 @@ export default function Index(): ReactElement {
                                 const delay = (index + 2) / 10;
                                 return (
                                     <Reveal key={index} delay={delay}>
-                                        <div
-                                            tabIndex={0}
-                                            className='card__wrapper'
-                                            style={{ backgroundImage: `url(${image.url})` }}
-                                        >
-                                            <div className='card__overlay' />
-
-                                            {/* Date badge */}
-                                            <div className='card__header-info'>
-                                                <span className='date'>{formatDate(date)}</span>
+                                        <div tabIndex={0} className='card__wrapper'>
+                                            {/* Dedicated Banner Preview */}
+                                            <div className='card__banner'>
+                                                <img
+                                                    src={image.url}
+                                                    alt={title}
+                                                    className='card__banner-img'
+                                                    loading='lazy'
+                                                />
+                                                <div className='card__banner-overlay' />
+                                                <div className='card__header-info'>
+                                                    <span className='date'>{formatDate(date)}</span>
+                                                </div>
                                             </div>
 
-                                            {/* Body */}
+                                            {/* Card Body */}
                                             <div className='card__body-content'>
                                                 <span className='author'>
                                                     @{developer.username}
                                                 </span>
                                                 <h2 className='title'>
-                                                    <a href={url} target='_blank' rel='noreferrer'>
-                                                        {title}
-                                                    </a>
+                                                    {url ? (
+                                                        <a
+                                                            href={url}
+                                                            target='_blank'
+                                                            rel='noreferrer'
+                                                        >
+                                                            {title}
+                                                        </a>
+                                                    ) : (
+                                                        title
+                                                    )}
                                                 </h2>
                                                 <p className='text'>{description}</p>
 
-                                                <div className='skills'>
-                                                    {technologies?.map((tech, i) => (
-                                                        <img
-                                                            key={i}
-                                                            className='skills__skill'
-                                                            src={tech.url}
-                                                            alt={tech.name}
-                                                            title={tech.name}
-                                                        />
-                                                    ))}
-                                                </div>
+                                                <div className='card__footer'>
+                                                    <div className='skills'>
+                                                        {technologies?.map((tech, i) => (
+                                                            <div
+                                                                key={i}
+                                                                className='skills__item'
+                                                                title={tech.name}
+                                                            >
+                                                                <img
+                                                                    className='skills__skill'
+                                                                    src={tech.url}
+                                                                    alt={tech.name}
+                                                                />
+                                                            </div>
+                                                        ))}
+                                                    </div>
 
-                                                <a
-                                                    href={url}
-                                                    target='_blank'
-                                                    rel='noreferrer'
-                                                    className='button'
-                                                >
-                                                    <FaGithub />
-                                                    {t('projects.github_link')}
-                                                </a>
+                                                    {url && (
+                                                        <a
+                                                            href={url}
+                                                            target='_blank'
+                                                            rel='noreferrer'
+                                                            className='button'
+                                                        >
+                                                            <FaGithub />
+                                                            {t('projects.github_link')}
+                                                        </a>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
                                     </Reveal>
