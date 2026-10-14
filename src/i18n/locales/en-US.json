@@ -23,7 +23,28 @@
         },
         "projects": {
             "title": "Projects",
-            "github_link": "View on GitHub",
+            "view_details": "View details",
+            "close_modal": "Close",
+            "categories": {
+                "all": "All",
+                "platform": "Platforms",
+                "api": "APIs",
+                "landing_page": "Landing Pages"
+            },
+            "category_labels": {
+                "PLATFORM": "Platform",
+                "API": "API",
+                "LANDING_PAGE": "Landing Page"
+            },
+            "modal": {
+                "overview": "Overview",
+                "features": "Key Features",
+                "screenshots": "System Screens",
+                "technologies": "Tech Stack",
+                "metrics": "Metrics & Highlights",
+                "view_project": "Live Project",
+                "close": "Close"
+            },
             "more_projects": "↓ See more projects",
             "less_projects": "↑ See fewer projects"
         },

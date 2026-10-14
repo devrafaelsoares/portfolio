@@ -23,7 +23,28 @@
         },
         "projects": {
             "title": "Projetos",
-            "github_link": "Ver no GitHub",
+            "view_details": "Ver detalhes",
+            "close_modal": "Fechar",
+            "categories": {
+                "all": "Todos",
+                "platform": "Plataformas",
+                "api": "APIs",
+                "landing_page": "Landing Pages"
+            },
+            "category_labels": {
+                "PLATFORM": "Plataforma",
+                "API": "API",
+                "LANDING_PAGE": "Landing Page"
+            },
+            "modal": {
+                "overview": "Visão Geral",
+                "features": "Principais Funcionalidades",
+                "screenshots": "Telas do Sistema",
+                "technologies": "Stack Tecnológica",
+                "metrics": "Métricas & Destaques",
+                "view_project": "Acessar Projeto",
+                "close": "Fechar"
+            },
             "more_projects": "↓ Ver mais projetos",
             "less_projects": "↑ Menos projetos"
         },

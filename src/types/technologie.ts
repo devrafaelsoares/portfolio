@@ -14,7 +14,8 @@ export type TechnologieName =
     | 'AI'
     | 'NEXTJS'
     | 'RABBITMQ'
-    | 'CSS';
+    | 'CSS'
+    | 'ASTRO';
 
 export type Technologie = {
     readonly name: string;
