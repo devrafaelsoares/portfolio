@@ -17,6 +17,7 @@ export const {
     NEXTJS,
     RABBITMQ,
     CSS,
+    ASTRO,
 }: TechnologieInfo = {
     REACT: {
         name: 'React',
@@ -97,5 +98,10 @@ export const {
         name: 'CSS3',
         slug: 'css',
         url: 'technologies/css.svg',
+    },
+    ASTRO: {
+        name: 'Astro',
+        slug: 'astro',
+        url: 'technologies/astro.svg',
     },
 };
