@@ -4,7 +4,7 @@ export const developer: Developer = {
     name: 'Rafael Henrique',
     username: 'devrafaelsoares',
     sociakMedia: {
-        github: 'https://github.com/devrafaelsoares/devrafaelsoares',
+        github: 'https://github.com/devrafaelsoares',
         linkedin: 'https://www.linkedin.com/in/rafael-henrique-soares-de-freitas-2a667a23a/',
     },
     aboutMe:
