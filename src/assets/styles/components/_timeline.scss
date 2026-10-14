@@ -50,7 +50,10 @@ $spacing: 48px;
         margin-bottom: 2rem;
         display: grid;
         gap: 1rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
 
         &:last-of-type {
             margin-bottom: 0;

@@ -37,7 +37,12 @@
 // ─── HTML & Body ──────────────────────────────────────────────────────────────
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
     overflow-x: hidden; // Prevent horizontal scroll from layout bugs
+}
+
+section[data-section] {
+    scroll-margin-top: 5rem;
 }
 
 body {

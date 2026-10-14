@@ -13,6 +13,10 @@ export const {
     SPRINGBOOT,
     REDIS,
     SASS,
+    AI,
+    NEXTJS,
+    RABBITMQ,
+    CSS,
 }: TechnologieInfo = {
     REACT: {
         name: 'React',
@@ -73,5 +77,25 @@ export const {
         name: 'SASS',
         slug: 'sass',
         url: 'technologies/sass.svg',
+    },
+    AI: {
+        name: 'Inteligência Artificial',
+        slug: 'ai',
+        url: 'technologies/ai.svg',
+    },
+    NEXTJS: {
+        name: 'Next.js',
+        slug: 'nextjs',
+        url: 'technologies/nextjs.svg',
+    },
+    RABBITMQ: {
+        name: 'RabbitMQ',
+        slug: 'rabbitmq',
+        url: 'technologies/rabbitmq.svg',
+    },
+    CSS: {
+        name: 'CSS3',
+        slug: 'css',
+        url: 'technologies/css.svg',
     },
 };
