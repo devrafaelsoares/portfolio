@@ -18,6 +18,11 @@ export const {
     RABBITMQ,
     CSS,
     ASTRO,
+    LANGCHAIN,
+    MEILISEARCH,
+    QUARKUS,
+    FASTAPI,
+    QDRANT,
 }: TechnologieInfo = {
     REACT: {
         name: 'React',
@@ -25,12 +30,12 @@ export const {
         url: 'technologies/react.svg',
     },
     TYPESCRIPT: {
-        name: 'Typescript',
+        name: 'TypeScript',
         slug: 'typescript',
         url: 'technologies/typescript.svg',
     },
     NODEJS: {
-        name: 'NodeJS',
+        name: 'Node.js',
         slug: 'nodejs',
         url: 'technologies/node.svg',
     },
@@ -103,5 +108,30 @@ export const {
         name: 'Astro',
         slug: 'astro',
         url: 'technologies/astro.svg',
+    },
+    LANGCHAIN: {
+        name: 'LangChain',
+        slug: 'langchain',
+        url: 'technologies/langchain.svg',
+    },
+    MEILISEARCH: {
+        name: 'Meilisearch',
+        slug: 'meilisearch',
+        url: 'technologies/meilisearch.svg',
+    },
+    QUARKUS: {
+        name: 'Quarkus',
+        slug: 'quarkus',
+        url: 'technologies/quarkus.svg',
+    },
+    FASTAPI: {
+        name: 'FastAPI',
+        slug: 'fastapi',
+        url: 'technologies/fastapi.svg',
+    },
+    QDRANT: {
+        name: 'Qdrant',
+        slug: 'qdrant',
+        url: 'technologies/qdrant.svg',
     },
 };

@@ -15,9 +15,21 @@ i18n.use(LanguageDetector)
     .init({
         resources,
         fallbackLng: 'pt-BR',
+        detection: {
+            order: ['localStorage'],
+            caches: ['localStorage'],
+            lookupLocalStorage: 'portfolio-lang',
+        },
         interpolation: {
             escapeValue: false, // React already safe from xss
         },
     });
+
+const syncDocumentLang = (lng: string) => {
+    document.documentElement.lang = lng;
+};
+
+syncDocumentLang(i18n.resolvedLanguage ?? 'pt-BR');
+i18n.on('languageChanged', syncDocumentLang);
 
 export default i18n;

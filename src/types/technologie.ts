@@ -15,7 +15,12 @@ export type TechnologieName =
     | 'NEXTJS'
     | 'RABBITMQ'
     | 'CSS'
-    | 'ASTRO';
+    | 'ASTRO'
+    | 'LANGCHAIN'
+    | 'MEILISEARCH'
+    | 'QUARKUS'
+    | 'FASTAPI'
+    | 'QDRANT';
 
 export type Technologie = {
     readonly name: string;

@@ -1,35 +1,35 @@
 // ─── Color Palette ────────────────────────────────────────────────────────────
 
 // Dark backgrounds
-$bg-primary: #0a0a0f;
-$bg-secondary: #0d0d18;
-$bg-tertiary: #111128;
+$bg-primary: #0f1216;
+$bg-secondary: #13171c;
+$bg-tertiary: #1a1f26;
 
-// Accent — Indigo / Violet
-$accent: #6366f1;
-$accent-hover: #818cf8;
-$accent-secondary: #8b5cf6;
+// Accent — Blue
+$accent: #075fe4;
+$accent-hover: #5b9dff;
+$accent-secondary: #5b9dff;
 $accent-emerald: #10b981;
 $accent-rose: #f43f5e;
 
 // Text
 $text-primary: #f1f5f9;
 $text-secondary: #cbd5e1;
-$text-muted: #64748b;
+$text-muted: #8d97a5;
 
 // Border
-$border-color: rgba(99, 102, 241, 0.18);
+$border-color: rgba(7, 95, 228, 0.18);
 $border-subtle: rgba(255, 255, 255, 0.06);
 
 // Legacy (kept for compatibility)
 $white-color: #f1f5f9;
-$primary-dark-color: #0a0a0f;
+$primary-dark-color: #0f1216;
 $light-gray-color: #64748b;
 $light-gray-secondary-color: #94a3b8;
 $dark-gray-color: #475569;
-$light-blue-color: #6366f1;
-$regal-blue-color: #4f46e5;
-$dark-cyan-color: #1e1b4b;
+$light-blue-color: #075fe4;
+$regal-blue-color: #034378;
+$dark-cyan-color: #2d4e68;
 $light-green-color: #10b981;
 $black-color: #000;
 
@@ -37,8 +37,9 @@ $logo-color: $accent;
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 
-$primary-font: 'Space Grotesk', sans-serif;
-$mono-font: 'JetBrains Mono', monospace;
+$primary-font: 'IBM Plex Sans', system-ui, sans-serif;
+$display-font: 'Schibsted Grotesk', 'IBM Plex Sans', system-ui, sans-serif;
+$mono-font: 'IBM Plex Mono', ui-monospace, monospace;
 
 // ─── Layouts ──────────────────────────────────────────────────────────────────
 
@@ -53,7 +54,7 @@ $section-separator-margin-top: 12vh;
 
 // ─── Gradients ────────────────────────────────────────────────────────────────
 
-$gradient-accent: linear-gradient(135deg, $accent 0%, $accent-secondary 100%);
+$gradient-accent: linear-gradient($accent, $accent);
 $gradient-emerald: linear-gradient(135deg, $accent-emerald 0%, #059669 100%);
 $gradient-subtle: linear-gradient(180deg, transparent 0%, rgba($accent, 0.04) 100%);
 

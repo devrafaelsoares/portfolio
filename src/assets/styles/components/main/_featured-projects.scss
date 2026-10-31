@@ -1,0 +1,73 @@
+@use '../../variables';
+
+.featured {
+    width: 100%;
+
+    &__title {
+        margin-bottom: 1rem;
+        font-family: variables.$mono-font;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: variables.$text-muted;
+    }
+
+    &__list {
+        display: grid;
+        gap: 1rem;
+        list-style: none;
+    }
+
+    &__item {
+        padding: 1.25rem 1.5rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #13171c;
+    }
+
+    &__metric {
+        color: variables.$text-secondary;
+        font-size: 0.95rem;
+
+        strong {
+            margin-right: 0.15rem;
+            font-family: variables.$mono-font;
+            font-size: 1.75rem;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            color: variables.$accent-hover;
+        }
+    }
+
+    &__name {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: variables.$text-primary;
+    }
+
+    &__context {
+        margin-top: 0.2rem;
+        font-size: 0.85rem;
+        color: variables.$text-muted;
+    }
+}
+
+.main__apresentation .featured {
+    width: 400px;
+    max-width: 100%;
+
+    @media (max-width: 900px) {
+        width: 100%;
+    }
+}
+
+.main__projects .featured {
+    width: min(92%, 1100px);
+    margin: 0 auto 3rem;
+
+    &__list {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+}

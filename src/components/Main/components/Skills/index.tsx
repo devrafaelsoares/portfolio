@@ -1,50 +1,34 @@
 import type { ReactElement } from 'react';
 import Reveal from '@/components/util/Reveal';
 import { useTranslation } from 'react-i18next';
-import { FaCode, FaPalette, FaGears, FaDatabase, FaDocker } from 'react-icons/fa6';
 import {
     TYPESCRIPT,
     JAVA,
     PYTHON,
     REACT,
-    TAILWINDCSS,
-    SASS,
     SPRINGBOOT,
     NODEJS,
     POSTGRESQL,
-    REDIS,
     DOCKER,
+    LANGCHAIN,
+    RABBITMQ,
+    NEXTJS,
+    QUARKUS,
+    MEILISEARCH,
+    FASTAPI,
+    QDRANT,
 } from '@/data/technologies';
 
 type Tech = { name: string; url: string; slug: string };
-type Category = { labelKey: string; icon: ReactElement; techs: Tech[] };
+type Category = { labelKey: string; techs: Tech[] };
 
 const categories: Category[] = [
-    {
-        labelKey: 'skills.categories.languages',
-        icon: <FaCode />,
-        techs: [TYPESCRIPT, JAVA, PYTHON],
-    },
-    {
-        labelKey: 'skills.categories.frontend',
-        icon: <FaPalette />,
-        techs: [REACT, TAILWINDCSS, SASS],
-    },
-    {
-        labelKey: 'skills.categories.backend',
-        icon: <FaGears />,
-        techs: [SPRINGBOOT, NODEJS],
-    },
-    {
-        labelKey: 'skills.categories.database',
-        icon: <FaDatabase />,
-        techs: [POSTGRESQL, REDIS],
-    },
-    {
-        labelKey: 'skills.categories.infrastructure',
-        icon: <FaDocker />,
-        techs: [DOCKER],
-    },
+    { labelKey: 'skills.categories.backend', techs: [NODEJS, FASTAPI, QUARKUS, SPRINGBOOT] },
+    { labelKey: 'skills.categories.ai', techs: [LANGCHAIN] },
+    { labelKey: 'skills.categories.database', techs: [POSTGRESQL, QDRANT, MEILISEARCH, RABBITMQ] },
+    { labelKey: 'skills.categories.languages', techs: [TYPESCRIPT, PYTHON, JAVA] },
+    { labelKey: 'skills.categories.frontend', techs: [REACT, NEXTJS] },
+    { labelKey: 'skills.categories.infrastructure', techs: [DOCKER] },
 ];
 
 export default function Index(): ReactElement {
@@ -57,26 +41,23 @@ export default function Index(): ReactElement {
                 </div>
             </Reveal>
 
-            <div className='skills__grid'>
-                {categories.map(({ labelKey, icon, techs }, ci) => (
-                    <Reveal key={ci} delay={0.15 + ci * 0.08}>
-                        <div className='skill-category'>
-                            <div className='skill-category__header'>
-                                <span className='skill-category__icon'>{icon}</span>
-                                <span className='skill-category__label'>{t(labelKey)}</span>
-                            </div>
-                            <div className='skill-category__chips'>
+            <Reveal delay={0.3}>
+                <dl className='skills__list'>
+                    {categories.map(({ labelKey, techs }) => (
+                        <div key={labelKey} className='skills__row'>
+                            <dt className='skills__label'>{t(labelKey)}</dt>
+                            <dd className='skills__techs'>
                                 {techs.map(({ name, url, slug }) => (
-                                    <div key={slug} className='tech-chip'>
-                                        <img src={url} alt={name} className='tech-chip__icon' />
-                                        <span className='tech-chip__name'>{name}</span>
-                                    </div>
+                                    <span key={slug} className='skills__tech'>
+                                        <img src={url} alt='' className='skills__icon' />
+                                        {name}
+                                    </span>
                                 ))}
-                            </div>
+                            </dd>
                         </div>
-                    </Reveal>
-                ))}
-            </div>
+                    ))}
+                </dl>
+            </Reveal>
         </section>
     );
 }

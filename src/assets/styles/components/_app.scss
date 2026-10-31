@@ -5,8 +5,8 @@ body {
     color: variables.$text-primary;
     // Subtle ambient gradients
     background-image:
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99, 102, 241, 0.1), transparent),
-        radial-gradient(ellipse 50% 40% at 90% 90%, rgba(139, 92, 246, 0.06), transparent);
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(7, 95, 228, 0.1), transparent),
+        radial-gradient(ellipse 50% 40% at 90% 90%, rgba(7, 95, 228, 0.06), transparent);
 }
 
 .container {
