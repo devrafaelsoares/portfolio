@@ -15,12 +15,12 @@
     --text-muted: #{variables.$text-muted};
     --border: #{variables.$border-color};
     --border-subtle: #{variables.$border-subtle};
-    --radius-sm: 6px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
     --glass-bg: rgba(255, 255, 255, 0.04);
     --glass-border: rgba(255, 255, 255, 0.08);
-    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+    --shadow-glow: none;
 }
 
 // ─── Reset ────────────────────────────────────────────────────────────────────
@@ -39,10 +39,6 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     overflow-x: hidden; // Prevent horizontal scroll from layout bugs
-}
-
-section[data-section] {
-    scroll-margin-top: 5rem;
 }
 
 body {
@@ -68,7 +64,7 @@ body:has(.active-menu-responsive) {
     background: variables.$bg-secondary;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(99, 102, 241, 0.5);
+    background: rgba(7, 95, 228, 0.5);
     border-radius: 3px;
     &:hover {
         background: variables.$accent;
@@ -77,7 +73,7 @@ body:has(.active-menu-responsive) {
 
 // ─── Selection ────────────────────────────────────────────────────────────────
 ::selection {
-    background: rgba(99, 102, 241, 0.25);
+    background: rgba(7, 95, 228, 0.25);
     color: variables.$text-primary;
 }
 

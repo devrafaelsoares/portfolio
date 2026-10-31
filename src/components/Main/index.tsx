@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 import Apresentation from './components/Apresentation';
+import About from './components/About';
 import Skills from './components/Skills';
 import Experiences from './components/Experiences';
 import Projects from './components/Projects';
@@ -11,6 +12,7 @@ export default function Index(): ReactElement {
     return (
         <main className='container__main'>
             <Apresentation />
+            <About />
             <Skills />
             <Experiences />
             <Projects />

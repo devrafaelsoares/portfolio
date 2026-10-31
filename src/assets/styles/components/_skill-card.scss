@@ -30,11 +30,8 @@
     &:hover,
     &:focus {
         transform: translateY(-6px);
-        border-color: rgba(99, 102, 241, 0.4);
-        box-shadow:
-            0 20px 40px rgba(0, 0, 0, 0.3),
-            0 0 0 1px rgba(99, 102, 241, 0.2),
-            var(--shadow-glow);
+        border-color: rgba(7, 95, 228, 0.4);
+        box-shadow: none;
         outline: none;
 
         &::before {
@@ -45,7 +42,7 @@
             height: 36px;
             .skill-card__icon {
                 transform: translateX(-50%) translateY(-50%) scale(2.8);
-                filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.5));
+                filter: drop-shadow(0 0 12px rgba(7, 95, 228, 0.5));
             }
         }
 
@@ -134,7 +131,7 @@
                     content: '▸';
                     position: absolute;
                     left: 0;
-                    color: variables.$accent;
+                    color: variables.$accent-hover;
                     font-size: 0.65rem;
                     top: 1px;
                 }

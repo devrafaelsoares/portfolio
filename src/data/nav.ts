@@ -9,6 +9,10 @@ export const navData: NavData[] = [
         name: 'Home',
     },
     {
+        url: 'about',
+        name: 'About',
+    },
+    {
         url: 'skills',
         name: 'Skills',
     },

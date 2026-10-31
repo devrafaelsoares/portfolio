@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { developer } from '@/data/developer';
 import '@/assets/styles/components/_footer.scss';
 
 export default function index() {
@@ -9,11 +10,18 @@ export default function index() {
             <div className='footer__row--bottom'>
                 <div className='row--bottom__copyright'>
                     <span className='copyright__text'>
-                        © {year} — <strong>Rafael Henrique</strong> · devrafaelsoares
+                        © {year} — <strong>{developer.name}</strong> · devrafaelsoares
                     </span>
                 </div>
                 <div className='row--bottom__social-media'>
                     <div className='social-media__container'>
+                        <a
+                            href={`mailto:${developer.email}`}
+                            title={developer.email}
+                            className='container__icon'
+                        >
+                            <FaEnvelope className='icon' />
+                        </a>
                         <a
                             href='https://github.com/devrafaelsoares'
                             target='_blank'

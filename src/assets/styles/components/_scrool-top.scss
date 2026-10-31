@@ -23,9 +23,9 @@
     &:hover {
         color: variables.$accent-hover;
         border-color: variables.$accent;
-        background: rgba(99, 102, 241, 0.12);
+        background: rgba(7, 95, 228, 0.12);
         transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
+        box-shadow: none;
     }
 
     &:active {

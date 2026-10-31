@@ -26,6 +26,7 @@ export default function Index() {
                             onClick={() => setIsMenuActive(false)}
                             smooth
                             spy
+                            offset={-90}
                         >
                             {t(`nav.${name.toLowerCase()}`)}
                         </Link>

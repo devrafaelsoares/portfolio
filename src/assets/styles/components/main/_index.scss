@@ -1,6 +1,7 @@
 @use '../../variables';
 @import '../../mixins';
 @import './section-apresentation';
+@import './featured-projects';
 @import './section-about-me';
 @import './section-skills';
 @import './section-experiences';
@@ -14,32 +15,16 @@
 
     .section {
         .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            text-align: center;
-            letter-spacing: -0.03em;
+            font-family: variables.$display-font;
+            font-size: clamp(1.6rem, 3vw, 2.25rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
             color: variables.$text-primary;
-            position: relative;
-            display: inline-block;
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -12px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 48px;
-                height: 3px;
-                background: variables.$gradient-accent;
-                border-radius: 2px;
-            }
         }
     }
 
     .section__content {
-        margin-top: 0;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 3rem;
+        width: min(92%, 1100px);
+        margin: 0 auto 2.5rem;
     }
 }

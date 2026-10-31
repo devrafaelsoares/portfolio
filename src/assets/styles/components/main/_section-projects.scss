@@ -1,39 +1,4 @@
-@use '../../variables';
-
 .main__projects {
     grid-area: section-projects;
     padding: 5rem 0;
-
-    .section__projects {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding: 0 1rem;
-    }
-
-    // ── "Ver mais" button ──────────────────────────────────────────────
-    .more-projects-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: var(--glass-bg);
-        color: variables.$text-secondary;
-        border: 1px solid variables.$border-color;
-        padding: 0.7rem 1.75rem;
-        border-radius: var(--radius-md);
-        cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: 500;
-        font-family: variables.$mono-font;
-        margin-top: 2.5rem;
-        transition: all 0.25s ease;
-        letter-spacing: 0.01em;
-
-        &:hover {
-            background: rgba(99, 102, 241, 0.1);
-            border-color: variables.$accent;
-            color: variables.$accent-hover;
-            transform: translateY(-2px);
-        }
-    }
 }

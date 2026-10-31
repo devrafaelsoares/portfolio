@@ -6,25 +6,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     padding-top: 70px;
     position: relative;
     overflow-x: hidden;
-
-    // Subtle grid backdrop
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image:
-            linear-gradient(rgba(99, 102, 241, 0.035) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(99, 102, 241, 0.035) 1px, transparent 1px);
-        background-size: 60px 60px;
-        mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 80%);
-        -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 80%);
-        pointer-events: none;
-        z-index: 0;
-    }
 
     // ── Main flex row ───────────────────────────────────────────────────
     .apresentation__section {
@@ -38,7 +22,7 @@
         z-index: 1;
         position: relative;
 
-        // The Reveal wrapper around terminal
+        // The Reveal wrapper around featured projects
         > .reveal-component:last-child {
             flex-shrink: 0;
         }
@@ -67,8 +51,8 @@
         }
 
         @media (max-width: 900px) {
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            text-align: left;
         }
     }
 
@@ -80,7 +64,7 @@
         padding: 0.35rem 0.875rem;
         background: rgba(16, 185, 129, 0.08);
         border: 1px solid rgba(16, 185, 129, 0.22);
-        border-radius: 100px;
+        border-radius: 8px;
         font-size: 0.78rem;
         font-weight: 500;
         color: variables.$accent-emerald;
@@ -108,16 +92,9 @@
     }
 
     // ── Greeting + Name block ──────────────────────────────────────────
-    .hero__greeting {
-        font-size: 1.1rem;
-        font-weight: 400;
-        color: variables.$text-muted;
-        margin-bottom: 0.2rem;
-        font-family: variables.$mono-font;
-        letter-spacing: 0.02em;
-    }
 
     .my-apresentation__name {
+        font-family: variables.$display-font;
         font-size: clamp(2.6rem, 5.5vw, 4.2rem);
         font-weight: 800;
         line-height: 1.05;
@@ -171,7 +148,7 @@
         width: 100%;
 
         @media (max-width: 900px) {
-            justify-content: center;
+            justify-content: flex-start;
         }
     }
 
@@ -198,12 +175,12 @@
 
         &--primary {
             background: variables.$gradient-accent;
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            color: #ffffff;
+            box-shadow: none;
 
             &:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 8px 28px rgba(99, 102, 241, 0.45);
+                box-shadow: none;
                 .btn-icon {
                     transform: translateX(4px);
                 }
@@ -217,7 +194,7 @@
 
             &:hover {
                 background: rgba(255, 255, 255, 0.08);
-                border-color: rgba(99, 102, 241, 0.3);
+                border-color: rgba(7, 95, 228, 0.3);
                 transform: translateY(-2px);
             }
         }
@@ -226,6 +203,9 @@
     // ── Social link (GitHub with username) ─────────────────────────────
     .hero__social-row {
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.5rem;
     }
 
     .social-link {
@@ -243,200 +223,6 @@
 
         &:hover {
             color: variables.$text-primary;
-        }
-    }
-
-    // ── Terminal window ────────────────────────────────────────────────
-    .hero__terminal {
-        width: clamp(280px, 38vw, 420px);
-        background: rgba(10, 10, 20, 0.85);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: var(--radius-lg);
-        backdrop-filter: blur(20px);
-        overflow: hidden;
-        box-shadow:
-            0 24px 48px rgba(0, 0, 0, 0.4),
-            0 0 0 1px rgba(99, 102, 241, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        font-family: variables.$mono-font;
-        flex-shrink: 0;
-
-        @media (max-width: 900px) {
-            width: 100%;
-        }
-    }
-
-    .terminal__topbar {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1rem;
-        background: rgba(255, 255, 255, 0.04);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .terminal__dots {
-        display: flex;
-        gap: 6px;
-
-        span {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-        }
-        .dot--red {
-            background: #ff5f57;
-        }
-        .dot--yellow {
-            background: #febc2e;
-        }
-        .dot--green {
-            background: #28c840;
-        }
-    }
-
-    .terminal__title {
-        flex: 1;
-        text-align: center;
-        font-size: 0.73rem;
-        color: rgba(255, 255, 255, 0.3);
-        letter-spacing: 0.05em;
-        margin-right: 40px; // Balance with dots
-    }
-
-    .terminal__body {
-        padding: 1.25rem 1.5rem 1.5rem;
-        font-size: 0.85rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.1rem;
-    }
-
-    // Line with prompt
-    .t-line {
-        display: flex;
-        align-items: center;
-        gap: 0.35rem;
-        color: rgba(255, 255, 255, 0.2);
-
-        &.t-gap {
-            margin-top: 0.85rem;
-        }
-    }
-
-    .t-prompt {
-        color: variables.$accent;
-        font-weight: 600;
-        user-select: none;
-    }
-
-    .t-cmd {
-        color: variables.$text-secondary;
-    }
-
-    // Output lines
-    .t-output {
-        padding-left: 1.1rem;
-        color: rgba(255, 255, 255, 0.5);
-        line-height: 1.7;
-
-        &.t-name {
-            color: variables.$text-primary;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        &.t-status {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: variables.$accent-emerald;
-        }
-    }
-
-    // Skill tags inside terminal
-    .t-tag {
-        display: inline-block;
-        padding: 0.1rem 0.5rem;
-        margin: 0.15rem 0.25rem 0.15rem 0;
-        background: rgba(99, 102, 241, 0.12);
-        border: 1px solid rgba(99, 102, 241, 0.2);
-        border-radius: 4px;
-        color: variables.$accent-hover;
-        font-size: 0.78rem;
-        font-weight: 500;
-    }
-
-    .t-dot-green {
-        width: 7px;
-        height: 7px;
-        background: variables.$accent-emerald;
-        border-radius: 50%;
-        display: inline-block;
-        flex-shrink: 0;
-        animation: pulse-dot 2s ease-in-out infinite;
-    }
-
-    // Blinking cursor
-    .t-cursor-line {
-        margin-top: 0.85rem;
-    }
-
-    .t-cursor {
-        color: variables.$accent;
-        animation: blink 1.2s step-end infinite;
-        font-weight: 400;
-    }
-
-    @keyframes blink {
-        0%,
-        100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-    }
-
-    // ── Scroll indicator ───────────────────────────────────────────────
-    .scroll-indicator {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding-bottom: 2.5rem;
-        opacity: 0.3;
-        animation: fade-bounce 2.5s ease-in-out infinite;
-        z-index: 1;
-
-        .scroll-indicator__line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, variables.$accent, transparent);
-        }
-
-        span {
-            font-family: variables.$mono-font;
-            font-size: 0.6rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: variables.$text-muted;
-        }
-
-        @media (max-width: 600px) {
-            display: none;
-        }
-    }
-
-    @keyframes fade-bounce {
-        0%,
-        100% {
-            transform: translateY(0);
-            opacity: 0.3;
-        }
-        50% {
-            transform: translateY(8px);
-            opacity: 0.5;
         }
     }
 }

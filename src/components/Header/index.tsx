@@ -42,8 +42,8 @@ export default function Index() {
                     onClick={toggleLanguage}
                     style={{
                         background: 'transparent',
-                        border: '1px solid #6366f1',
-                        color: '#a5b4fc',
+                        border: '1px solid #075fe4',
+                        color: '#5b9dff',
                         borderRadius: '4px',
                         padding: '4px 10px',
                         cursor: 'pointer',

@@ -9,15 +9,13 @@ $spacing: 48px;
 
 .timeline {
     margin-top: $spacing;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 0 1rem;
+    width: min(92%, 1100px);
+    margin-inline: auto;
 }
 
 .timeline__content {
     position: relative;
-    width: min(90%, 720px);
+    width: min(100%, 760px);
     padding: $spacing 0 $spacing 2.5rem;
     list-style: none;
     text-align: left;
@@ -43,9 +41,9 @@ $spacing: 48px;
     // ── Individual event ──────────────────────────────────────────────
     .event {
         position: relative;
-        background: #111116;
+        background: #13171c;
         border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 16px;
+        border-radius: 8px;
         padding: 2rem;
         margin-bottom: 2rem;
         display: grid;
@@ -62,7 +60,7 @@ $spacing: 48px;
         &:hover {
             transform: translateX(6px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border-color: rgba(99, 102, 241, 0.2);
+            border-color: rgba(7, 95, 228, 0.2);
         }
 
         // Glowing dot
@@ -76,9 +74,7 @@ $spacing: 48px;
             border-radius: 50%;
             background: variables.$accent;
             border: $dot-border solid variables.$bg-primary;
-            box-shadow:
-                0 0 0 3px rgba(99, 102, 241, 0.3),
-                0 0 12px rgba(99, 102, 241, 0.4);
+            box-shadow: none;
             z-index: 1;
             animation: dot-pulse 3s ease-in-out infinite;
         }
@@ -86,14 +82,10 @@ $spacing: 48px;
         @keyframes dot-pulse {
             0%,
             100% {
-                box-shadow:
-                    0 0 0 3px rgba(99, 102, 241, 0.3),
-                    0 0 12px rgba(99, 102, 241, 0.4);
+                box-shadow: none;
             }
             50% {
-                box-shadow:
-                    0 0 0 6px rgba(99, 102, 241, 0.1),
-                    0 0 20px rgba(99, 102, 241, 0.6);
+                box-shadow: none;
             }
         }
 
@@ -108,16 +100,16 @@ $spacing: 48px;
                 font-family: variables.$mono-font;
                 font-size: 0.9rem;
                 font-weight: 600;
-                color: variables.$accent;
-                background: rgba(99, 102, 241, 0.1);
-                border: 1px solid rgba(99, 102, 241, 0.25);
+                color: variables.$accent-hover;
+                background: rgba(7, 95, 228, 0.1);
+                border: 1px solid rgba(7, 95, 228, 0.25);
                 padding: 0.25rem 0.75rem;
-                border-radius: 100px;
+                border-radius: 8px;
                 letter-spacing: 0.05em;
             }
 
             .year-container__icon {
-                color: variables.$accent;
+                color: variables.$accent-hover;
                 font-size: 1.1rem;
             }
         }
@@ -150,42 +142,20 @@ $spacing: 48px;
             max-width: 600px;
         }
 
-        // ── Skills row ─────────────────────────────────────────────
-        &__skills-container {
-            display: inline-flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            align-items: center;
-
-            .skill {
-                width: 1.6rem;
-                height: 1.6rem;
-                object-fit: contain;
-                filter: grayscale(15%);
-                transition:
-                    filter 0.2s ease,
-                    transform 0.2s ease;
-
-                &:hover {
-                    filter: none;
-                    transform: scale(1.15) translateY(-2px);
-                }
-            }
-        }
-
-        &__skills-info-container {
+        // ── Highlights ─────────────────────────────────────────────
+        &__highlights {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 0.5rem;
-            font-size: 0.95rem;
+            max-width: 600px;
+            padding-left: 1.1rem;
+            list-style: disc;
+            font-size: 0.98rem;
+            line-height: 1.6;
             color: variables.$text-muted;
-            margin-top: 0.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 1rem;
 
-            .skills-info-container__icon {
-                font-size: 1rem;
-                color: variables.$accent-secondary;
+            li::marker {
+                color: variables.$accent-hover;
             }
         }
     }
