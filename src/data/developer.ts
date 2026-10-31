@@ -1,7 +1,8 @@
 import type { Developer } from '@/types/developer';
 
 export const developer: Developer = {
-    name: 'Rafael Henrique',
+    name: 'Rafael Henrique Soares de Freitas',
+    email: 'contato.devrafaelsoares@gmail.com',
     username: 'devrafaelsoares',
     sociakMedia: {
         github: 'https://github.com/devrafaelsoares',

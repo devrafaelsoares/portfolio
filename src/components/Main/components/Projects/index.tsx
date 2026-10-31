@@ -1,9 +1,10 @@
 import type { ReactElement } from 'react';
 import { useState } from 'react';
 import Reveal from '@/components/util/Reveal';
-import { projects } from '@/data/projects';
-import type { Project, ProjectCategory } from '@/types/project';
+import { getProjects } from '@/data/projects';
+import type { ProjectCategory } from '@/types/project';
 import { useTranslation } from 'react-i18next';
+import { FaArrowRight } from 'react-icons/fa6';
 import ProjectModal from './ProjectModal';
 import '@/assets/styles/components/_card-project.scss';
 
@@ -12,10 +13,14 @@ type FilterCategory = 'ALL' | ProjectCategory;
 export default function Index(): ReactElement {
     const { t, i18n } = useTranslation();
     const [activeCategory, setActiveCategory] = useState<FilterCategory>('ALL');
-    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+    const projects = getProjects(t);
+    const selectedProject = projects.find(p => p.id === selectedProjectId) ?? null;
 
     const filteredProjects =
         activeCategory === 'ALL' ? projects : projects.filter(p => p.category === activeCategory);
+
+    const years = [...new Set(filteredProjects.map(p => p.date.getFullYear()))];
 
     const formatDate = (date: Date) =>
         date.toLocaleDateString(i18n.language === 'pt-BR' ? 'pt-BR' : 'en-US', {
@@ -62,103 +67,77 @@ export default function Index(): ReactElement {
                 </div>
             </Reveal>
 
-            {/* Projects Grid */}
-            <div className='section__projects'>
-                <div className='project card'>
-                    <div className='section__card-grid'>
-                        {filteredProjects.map((project, index) => {
-                            const delay = ((index % 6) + 2) / 10;
-                            const categoryLabel = t(`projects.category_labels.${project.category}`);
-
-                            return (
-                                <Reveal key={project.id || index} delay={delay}>
+            {/* Projects by year */}
+            <div className='projects__list'>
+                {years.map(year => (
+                    <div key={year} className='projects__year-group'>
+                        <h2 className='projects__year'>{year}</h2>
+                        <div className='projects__rows'>
+                            {filteredProjects
+                                .filter(project => project.date.getFullYear() === year)
+                                .map(project => (
                                     <div
+                                        key={project.id}
                                         tabIndex={0}
-                                        className='card__wrapper'
-                                        onClick={() => setSelectedProject(project)}
+                                        role='button'
+                                        className='project-row'
+                                        aria-label={t('projects.details_of', {
+                                            title: project.title,
+                                        })}
+                                        onClick={() => setSelectedProjectId(project.id)}
                                         onKeyDown={e => {
                                             if (e.key === 'Enter' || e.key === ' ') {
                                                 e.preventDefault();
-                                                setSelectedProject(project);
+                                                setSelectedProjectId(project.id);
                                             }
                                         }}
-                                        role='button'
-                                        aria-label={`Ver detalhes de ${project.title}`}
                                     >
-                                        {/* Banner Area */}
-                                        <div className='card__banner'>
-                                            <img
-                                                src={project.image.url}
-                                                alt={project.title}
-                                                className='card__banner-img'
-                                                loading='lazy'
-                                            />
-                                            <div className='card__banner-overlay' />
-
-                                            {/* Category Tag (Top-Left) */}
-                                            <div className='card__category-badge'>
-                                                <span
-                                                    className={`badge-pill badge--${project.category.toLowerCase()}`}
-                                                >
-                                                    {categoryLabel}
-                                                </span>
-                                            </div>
-
-                                            {/* Date badge (Top-Right) */}
-                                            <div className='card__header-info'>
-                                                <span className='date'>
-                                                    {formatDate(project.date)}
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        {/* Body */}
-                                        <div className='card__body-content'>
-                                            <span className='author'>
-                                                @{project.developer.username}
-                                            </span>
-                                            <h2 className='title'>{project.title}</h2>
-                                            <p className='text'>{project.description}</p>
-
-                                            <div className='card__footer'>
-                                                <div className='skills'>
-                                                    {project.technologies?.map((tech, i) => (
-                                                        <div
-                                                            key={i}
-                                                            className='skills__item'
+                                        <img
+                                            src={project.image.url}
+                                            alt=''
+                                            className='project-row__image'
+                                            loading='lazy'
+                                        />
+                                        <div className='project-row__body'>
+                                            <p className='project-row__meta'>
+                                                {t(`projects.category_labels.${project.category}`)}
+                                                {' · '}
+                                                {formatDate(project.date)}
+                                            </p>
+                                            <h3 className='project-row__title'>{project.title}</h3>
+                                            <p className='project-row__text'>
+                                                {project.description}
+                                            </p>
+                                            <div className='project-row__footer'>
+                                                <div className='project-row__techs'>
+                                                    {project.technologies?.map(tech => (
+                                                        <img
+                                                            key={tech.slug}
+                                                            src={tech.url}
+                                                            alt={tech.name}
                                                             title={tech.name}
-                                                        >
-                                                            <img
-                                                                className='skills__skill'
-                                                                src={tech.url}
-                                                                alt={tech.name}
-                                                            />
-                                                        </div>
+                                                        />
                                                     ))}
                                                 </div>
-
-                                                <button
-                                                    type='button'
-                                                    className='button button--details'
-                                                    onClick={e => {
-                                                        e.stopPropagation();
-                                                        setSelectedProject(project);
-                                                    }}
-                                                >
+                                                <span className='project-row__action'>
                                                     {t('projects.view_details')}
-                                                </button>
+                                                    <FaArrowRight />
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
-                                </Reveal>
-                            );
-                        })}
+                                ))}
+                        </div>
                     </div>
-                </div>
+                ))}
             </div>
 
             {/* Details Modal */}
-            <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+            <ProjectModal
+                key={selectedProjectId}
+                project={selectedProject}
+                onClose={() => setSelectedProjectId(null)}
+            />
         </section>
     );
 }

@@ -1,5 +1,5 @@
 import { technologyEvents } from '@/data/events';
-import { MdEmojiEvents, MdEvent, MdScience } from 'react-icons/md';
+import { MdEvent, MdWork } from 'react-icons/md';
 import Reveal from '@/components/util/Reveal';
 import { useTranslation } from 'react-i18next';
 
@@ -8,34 +8,28 @@ export default function Index() {
     return (
         <section className='timeline'>
             <ul className='timeline__content'>
-                {technologyEvents.map(({ year, title, about, technologies }, index) => {
+                {technologyEvents.map(({ id }, index) => {
                     const delay = (index + 10) / 10;
+                    const key = `experiences.items.${id}`;
+                    const highlights = t(`${key}.highlights`, { returnObjects: true }) as string[];
 
                     return (
-                        <Reveal key={index} delay={delay}>
-                            <li key={index} className='event' data-date={year}>
+                        <Reveal key={id} delay={delay}>
+                            <li className='event'>
                                 <div className='event__title-container'>
-                                    <MdEmojiEvents className='title-container__icon' />
-                                    <h2 className='event__title'>{title}</h2>
+                                    <MdWork className='title-container__icon' />
+                                    <h2 className='event__title'>{t(`${key}.company`)}</h2>
                                 </div>
                                 <div className='event__year-container'>
                                     <MdEvent className='year-container__icon' />
-                                    <h3 className='year-container__year'>{year}</h3>
+                                    <h3 className='year-container__year'>{t(`${key}.period`)}</h3>
                                 </div>
-                                <p className='event__about'>{about}</p>
-                                {technologies && (
-                                    <div className='event__skills-info-container'>
-                                        <MdScience className='skills-info-container__icon' />
-                                        <p className='skills-info-container__year'>
-                                            {t('experiences.technologies')}
-                                        </p>
-                                    </div>
-                                )}
-                                <div className='event__skills-container'>
-                                    {technologies?.map(({ name, url }, index) => (
-                                        <img className='skill' key={index} src={url} alt={name} />
+                                <p className='event__about'>{t(`${key}.role`)}</p>
+                                <ul className='event__highlights'>
+                                    {highlights.map(highlight => (
+                                        <li key={highlight}>{highlight}</li>
                                     ))}
-                                </div>
+                                </ul>
                             </li>
                         </Reveal>
                     );

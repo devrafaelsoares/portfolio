@@ -54,7 +54,7 @@ export default function ScrollToTop({
                 <button
                     className={`scroll-to-top ${className}`}
                     onClick={() => scrollToTop(smooth)}
-                    aria-label='Scroll to top'
+                    aria-label='Voltar ao topo'
                     {...props}
                 >
                     {component || (

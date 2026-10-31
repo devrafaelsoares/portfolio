@@ -1,11 +1,41 @@
+@use '../../variables';
+
 .main__about-me {
     grid-area: section-about-me;
-    display: grid;
-    width: 100%;
-    min-height: 100vh;
+    padding: 5rem 0;
 
     .about-me__content {
-        width: 40%;
-        justify-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        width: min(92%, 1100px);
+        margin: 0 auto;
+    }
+
+    .about-me__bio {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 65ch;
+        color: variables.$text-secondary;
+    }
+
+    .about-me__copy {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.25rem;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--glass-border);
+        background: var(--glass-bg);
+        color: variables.$text-primary;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: border-color 0.2s ease;
+
+        &:hover {
+            border-color: rgba(7, 95, 228, 0.3);
+        }
     }
 }

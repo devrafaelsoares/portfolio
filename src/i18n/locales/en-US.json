@@ -4,22 +4,41 @@
             "language": "PT"
         },
         "apresentation": {
-            "greeting": "Hi, I am",
-            "role": "Systems Analyst",
-            "about_html": "Full Stack Developer focused on building robust and scalable applications — from the backend with <1>Java / Spring Boot</1> to the frontend with <3>React & TypeScript</3>. Passionate about best practices, clean architecture, and solutions that make a difference.",
+            "role": "Node.js/Python backend and applied AI (LangChain)",
             "see_projects": "See projects",
-            "download_cv": "Download CV",
-            "open_to_work": "open to work"
+            "download_cv": "Download resume",
+            "role_title": "Mid-level Full Stack Developer"
         },
         "nav": {
             "home": "Home",
             "skills": "Skills",
             "experience": "Experience",
-            "projects": "Projects"
+            "projects": "Projects",
+            "about": "About"
         },
         "experiences": {
             "title": "Experience",
-            "technologies": "Technologies"
+            "items": {
+                "pro_empresa": {
+                    "company": "Pró Empresa",
+                    "period": "Mar 2024 – present",
+                    "role": "Systems Analyst / Software Developer · Brasília",
+                    "highlights": [
+                        "Campaign kit logistics platform (2024 elections), with Node.js and React: over 1,000 kits delivered and over 800 concurrent users at peak.",
+                        "Legacy modernization: restructured systems into smaller, independent services with Node.js and TypeScript.",
+                        "Telemedicine platform with real-time communication between patient and professional, with Java (Quarkus) and Next.js."
+                    ]
+                },
+                "tre": {
+                    "company": "Regional Electoral Court (TRE)",
+                    "period": "Aug 2022 – Dec 2023",
+                    "role": "Technical Support (Internship) · Brasília",
+                    "highlights": [
+                        "Prepared hardware and software for voting environments in the 2022 General Elections, following strict security and verification protocols.",
+                        "Worked in an audited process with an immovable deadline and zero tolerance for errors."
+                    ]
+                }
+            }
         },
         "projects": {
             "title": "Projects",
@@ -43,10 +62,216 @@
                 "technologies": "Tech Stack",
                 "metrics": "Metrics & Highlights",
                 "view_project": "Live Project",
-                "close": "Close"
+                "close": "Close",
+                "previous_image": "Previous image",
+                "next_image": "Next image",
+                "thumbnail": "Thumbnail"
             },
             "more_projects": "↓ See more projects",
-            "less_projects": "↑ See fewer projects"
+            "less_projects": "↑ See fewer projects",
+            "items": {
+                "sofia": {
+                    "title": "Sofia — AI Agents for Operations and Sales",
+                    "description": "My own product in development: AI agents to schedule, sell and close orders on WhatsApp and Instagram, connected to a back office with calendar, order Kanban, catalog and CRM.",
+                    "overview": "Independent product of my own, built from scratch and still in development, not yet released to production. Sofia goes beyond a chatbot: its AI agents carry out real business actions inside WhatsApp, Instagram and the Web Inbox, connected to a management back office, and the platform is designed for companies in several segments, such as clinics, restaurants, consultancies, e-commerce and service providers. It is multi-tenant and adapts behavior, screens and tools to each company's niche. When needed, the conversation moves to the human team without the customer having to repeat anything.",
+                    "features": [
+                        "Agent with tool execution (function calling) — Queries real-time data, applies business rules and validates constraints",
+                        "AI models — LLM for conversation and function calling, tuned to reduce latency and cost",
+                        "Audio — Transcription of voice notes received on WhatsApp and Instagram",
+                        "Scheduling — Checks each professional's calendar, respects durations, breaks and holidays, and books, reschedules or cancels",
+                        "Conversational commerce — Catalog with photos and add-ons, shipping calculation, cart and order closing in the chat",
+                        "RAG knowledge base — Embeddings and semantic search on a vector database over company manuals, policies and rules",
+                        "Multi-provider — Ports & Adapters to switch LLM models or vendors",
+                        "Integrated back office — Order Kanban, multi-professional calendar, catalog with stock and CRM with customer history",
+                        "Omnichannel inbox with human handoff — Real-time conversations over WebSockets; agents take over and hand control back to the AI",
+                        "Message grouping — Joins sequential messages, simulates typing and respects business hours",
+                        "Modular multi-tenancy by niche — Specific rules for restaurants, clinics and services, with RBAC access control",
+                        "Analytics — Response time, AI latency, peak hours, contact reason classification and conversion",
+                        "Architecture — React/TypeScript frontend (MVVM) and 7 Python/FastAPI microservices with Clean Architecture, orchestrated by events on RabbitMQ"
+                    ],
+                    "metrics": [
+                        {
+                            "label": "Status",
+                            "value": "In development"
+                        },
+                        {
+                            "label": "Backend",
+                            "value": "7 FastAPI microservices"
+                        },
+                        {
+                            "label": "AI models",
+                            "value": "Multi-provider"
+                        },
+                        {
+                            "label": "Knowledge base",
+                            "value": "RAG with vector database"
+                        }
+                    ],
+                    "captions": [
+                        "My Assistant • Agent personality, knowledge base and settings",
+                        "Dashboard • Service metrics and operations overview, with demo data",
+                        "Catalog • Products and categories the agent uses when selling, with demo data",
+                        "Operations • Order Kanban from intake to completion, with demo data",
+                        "Appointments • Team calendar, services, professionals and hours, with demo data",
+                        "FAQ • Answers by department to guide the assistant"
+                    ]
+                },
+                "eduagenda": {
+                    "title": "EduAgenda — Education Management and Scheduling",
+                    "description": "Full-Stack class scheduling system with Clean Architecture, Google Calendar/Meet API integration and Gov.br accessibility (WCAG 2.1 AA).",
+                    "overview": "Platform that manages the full cycle of private lessons between tutors and students. Built with Clean Architecture, it integrates the Google Calendar API to create Google Meet rooms, a real-time anti-conflict scheduling engine, contract management with hour packages and a React and Vite interface based on the Gov.br Design System (WCAG 2.1 AA).",
+                    "features": [
+                        "Anti-Conflict Scheduling Engine — Processes availability and prevents double-booking",
+                        "Automatic Google Meet Rooms — Google Calendar API integration to create virtual rooms",
+                        "Catalog and Contract Management — Lesson packages and hour balance control with automated debit",
+                        "HttpOnly Cookie Security — Sessions protected against XSS with cryptographic tokens",
+                        "WCAG 2.1 AA Accessibility — Interface based on the Gov.br Design System with high contrast and explicit labels",
+                        "Sanitized Presentation Layer — Schema validation with Zod and async caching with TanStack Query"
+                    ],
+                    "captions": [
+                        "Student Panel • Available Lessons and Bookings",
+                        "Teacher Panel • Subjects and Time Zone Settings",
+                        "Lessons Panel • Confirmation, Rescheduling and Cancellation"
+                    ],
+                    "metrics": [
+                        {
+                            "label": "Architecture",
+                            "value": "Clean Architecture"
+                        },
+                        {
+                            "label": "Video Conferencing",
+                            "value": "Google Meet API"
+                        },
+                        {
+                            "label": "Accessibility",
+                            "value": "WCAG 2.1 AA (Gov.br)"
+                        }
+                    ]
+                },
+                "motta_barberclub": {
+                    "title": "Motta Barberclub — Premium Barbershop",
+                    "description": "Landing page for a high-end barbershop in Taguatinga Norte, Brazil, with online booking integrated with AppBarber.",
+                    "overview": "Luxury-style landing page built for Motta Barberclub, a high-end barbershop in Taguatinga Norte, Brazil. Focused on performance, local SEO and booking through the AppBarber platform.",
+                    "features": [
+                        "Astro architecture focused on Core Web Vitals",
+                        "Responsive dark luxury design with classic (Cinzel) and modern (Plus Jakarta Sans) typography",
+                        "Direct integration with the AppBarber online booking system",
+                        "Services, hot towel treatment, reviews and interactive map",
+                        "Local SEO and Open Graph meta tags for social networks"
+                    ],
+                    "captions": [
+                        "Hero Section • Dark Luxury Style and Call to Action",
+                        "Services & Cuts • Men's Grooming Price List",
+                        "Experience & Reviews • AppBarber 5.0 Stars"
+                    ],
+                    "metrics": [
+                        {
+                            "label": "Framework",
+                            "value": "Astro"
+                        },
+                        {
+                            "label": "Booking",
+                            "value": "AppBarber Integrated"
+                        },
+                        {
+                            "label": "AppBarber Rating",
+                            "value": "5.0 Stars"
+                        }
+                    ]
+                },
+                "url_shortener": {
+                    "title": "Enterprise URL Shortener",
+                    "description": "URL shortening platform with Clean Architecture, secure authentication and malicious link checks.",
+                    "overview": "Backend system in Node.js (Fastify) and TypeScript, designed with Clean Architecture (Hexagonal), decoupling business rules, persistence (Sequelize/PostgreSQL) and web interfaces. It uses the Cache-Aside pattern with Redis for redirects and generates IDs with crypto.randomBytes (CSPRNG) and Base62 conversion.",
+                    "features": [
+                        "ID Generation — crypto.randomBytes (CSPRNG) with Base62 conversion",
+                        "Threat Intelligence — Safe Browsing provider with local blacklists and XSS and phishing detection",
+                        "Authentication — ES256 JWT carried by HttpOnly, Secure and SameSite=Strict cookies",
+                        "Argon2 Hashing — Key derivation resistant to GPU brute-force attacks",
+                        "Redis Cache-Aside — Reduces database load on redirects",
+                        "Race Condition Prevention — Handling of write collisions in the database",
+                        "OpenAPI 3.0 Documentation — Interactive Swagger interface with cookieAuth support"
+                    ],
+                    "metrics": [
+                        {
+                            "label": "Algorithm",
+                            "value": "Base62 + CSPRNG"
+                        },
+                        {
+                            "label": "Authentication",
+                            "value": "ES256 + HttpOnly"
+                        },
+                        {
+                            "label": "Cache & Session",
+                            "value": "Redis Cache-Aside"
+                        },
+                        {
+                            "label": "Threat Intel",
+                            "value": "Safe Browsing"
+                        }
+                    ]
+                },
+                "store_api": {
+                    "title": "Store API RESTful",
+                    "description": "RESTful API for e-commerce catalog and cart with Spring Boot, Redis and PostgreSQL.",
+                    "overview": "RESTful API in Java 21 and Spring Boot for e-commerce, with product catalog management, a shopping cart with distributed sessions on Redis and relational persistence on PostgreSQL. It has a layered architecture and runs in Docker containers.",
+                    "features": [
+                        "Distributed Cart Management — Session storage with in-memory Redis",
+                        "Product and Category Catalog — Full CRUD with pagination and entity validation",
+                        "Authentication and Authorization — Access control with Spring Security and Bearer Token",
+                        "Global Exception Handling — Standard error responses following RFC 7807, without exposing stack traces",
+                        "Containerized Infrastructure — Automated environment with Docker and Docker Compose"
+                    ],
+                    "metrics": [
+                        {
+                            "label": "Session & Cache",
+                            "value": "Distributed Redis"
+                        },
+                        {
+                            "label": "Persistence",
+                            "value": "PostgreSQL"
+                        },
+                        {
+                            "label": "Containers",
+                            "value": "Docker Compose"
+                        }
+                    ]
+                },
+                "spring_auth": {
+                    "title": "Spring Boot Auth",
+                    "description": "Authentication and authorization REST API with Spring Security, asymmetric RSA256 JWT and HttpOnly cookies.",
+                    "overview": "Authentication and authorization REST API with Spring Boot 3 and Java 21 LTS. It implements role-based access control (RBAC) with three levels: Users, Roles and Privileges. Authentication uses JWT signed with asymmetric RSA256, delivered through HttpOnly + Secure + SameSite=Strict cookies to mitigate XSS, CSRF and token interception.",
+                    "features": [
+                        "JWT with RSA256 — Asymmetric cryptography: the private key signs tokens and the public key validates them",
+                        "Secure Cookies — HttpOnly, Secure (HTTPS-only) and SameSite=Strict flags to mitigate XSS and CSRF",
+                        "Multi-Level RBAC — User → Role → Privilege hierarchy with granular permissions",
+                        "Account Confirmation — Email activation with a UUID token",
+                        "Async Email — Asynchronous sending with @EnableAsync, Spring Mail and Thymeleaf HTML templates",
+                        "Global Exception Handler — Standard error responses that do not expose stack traces",
+                        "Unit Tests — Services and business rules tested with JUnit 5 and Mockito",
+                        "Multi-Stage Docker — JDK 21 build and Alpine JRE runtime with a non-root user"
+                    ],
+                    "metrics": [
+                        {
+                            "label": "Cryptography",
+                            "value": "Asymmetric RSA256"
+                        },
+                        {
+                            "label": "Access Control",
+                            "value": "Multi-Level RBAC"
+                        },
+                        {
+                            "label": "Web Security",
+                            "value": "HttpOnly Cookies"
+                        },
+                        {
+                            "label": "Language & Framework",
+                            "value": "Java 21 • Spring Boot 3"
+                        }
+                    ]
+                }
+            },
+            "details_of": "View details of {{title}}"
         },
         "skills": {
             "title": "Tech Stack",
@@ -54,9 +279,40 @@
                 "languages": "Languages",
                 "frontend": "Frontend",
                 "backend": "Backend",
-                "database": "Databases",
-                "infrastructure": "Infrastructure"
+                "database": "Data and messaging",
+                "infrastructure": "Infrastructure",
+                "ai": "Applied AI"
             }
+        },
+        "featured": {
+            "title": "Featured projects",
+            "items": {
+                "logistics": {
+                    "value": "1,000+",
+                    "unit": "kits delivered",
+                    "name": "Campaign kit logistics platform",
+                    "context": "Pró Empresa · 2024 elections, with 800+ concurrent users at peak"
+                },
+                "telemedicine": {
+                    "value": "Real time",
+                    "unit": "patient and professional",
+                    "name": "Telemedicine platform",
+                    "context": "Pró Empresa · Java (Quarkus) and Next.js"
+                },
+                "sofia": {
+                    "value": "7",
+                    "unit": "microservices",
+                    "name": "Sofia",
+                    "context": "My own product in development · AI agents to schedule, sell and close orders"
+                }
+            }
+        },
+        "about": {
+            "title": "About",
+            "bio": "Rafael Henrique Soares de Freitas is a mid-level Full Stack Developer based in Brasília, Brazil, focused on Node.js/Python backend and applied AI with LangChain. Rafael works on full stack production systems, from planning to delivery, including a platform with over 800 concurrent users at peak and more than 1,000 kits delivered.",
+            "copy_idle": "Copy bio",
+            "copy_copied": "Bio copied",
+            "copy_failed": "Couldn't copy"
         }
     }
 }
